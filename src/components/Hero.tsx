@@ -5,20 +5,27 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-6 pt-24 text-center"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24 text-center"
     >
+      <Image
+        src={siteConfig.heroImage}
+        alt=""
+        fill
+        priority
+        className="object-cover object-top"
+      />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(201,162,75,0.16),transparent_60%)]"
+        className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background"
       />
 
-      <div className="relative z-10 flex flex-col items-center gap-8">
+      <div className="relative z-10 flex flex-col items-center gap-8 px-6">
         <Image
           src="/bigh-logo.jpeg"
           alt={`${siteConfig.fullName} logo`}
-          width={140}
-          height={140}
-          className="rounded-full object-cover"
+          width={120}
+          height={120}
+          className="rounded-full object-cover shadow-lg shadow-ink/10"
           priority
         />
 
@@ -26,7 +33,7 @@ export default function Hero() {
           <h1 className="font-serif text-4xl leading-tight text-foreground sm:text-6xl">
             {siteConfig.fullName}
           </h1>
-          <p className="font-serif text-lg italic text-gold-soft sm:text-xl">
+          <p className="font-serif text-lg italic text-gold-deep sm:text-xl">
             {siteConfig.tagline}
           </p>
         </div>
@@ -38,13 +45,13 @@ export default function Hero() {
         <div className="mt-4 flex flex-col gap-4 sm:flex-row">
           <a
             href="#products"
-            className="rounded-full bg-gold px-8 py-3 text-sm uppercase tracking-widest text-background transition-colors hover:bg-gold-soft"
+            className="rounded-full bg-gold px-8 py-3 text-sm uppercase tracking-widest text-background transition-colors hover:bg-gold-deep"
           >
             Explore Collections
           </a>
           <a
             href="#contact"
-            className="rounded-full border border-gold-soft/60 px-8 py-3 text-sm uppercase tracking-widest text-gold-soft transition-colors hover:bg-white/5"
+            className="rounded-full border border-ink/20 px-8 py-3 text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-ink/5"
           >
             Contact Us
           </a>

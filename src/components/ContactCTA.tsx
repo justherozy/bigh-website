@@ -3,15 +3,15 @@ import { WhatsAppIcon } from "@/components/icons";
 
 export default function ContactCTA() {
   return (
-    <section id="contact" className="bg-charcoal px-6 py-24 sm:px-10">
+    <section id="contact" className="bg-ink px-6 py-24 sm:px-10">
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-gold">
+        <p className="text-xs uppercase tracking-[0.3em] text-gold-soft">
           Get In Touch
         </p>
-        <h2 className="font-serif text-3xl text-foreground sm:text-4xl">
+        <h2 className="font-serif text-3xl text-background sm:text-4xl">
           Ready to elevate your wardrobe?
         </h2>
-        <p className="max-w-lg text-foreground/70">
+        <p className="max-w-lg text-background/70">
           Message us on WhatsApp for orders, custom fittings, and enquiries.
           We&apos;re happy to help you find the perfect piece.
         </p>
@@ -33,7 +33,7 @@ export default function ContactCTA() {
 
         <a
           href={`mailto:${siteConfig.email}`}
-          className="mt-2 text-sm text-foreground/60 underline decoration-gold/40 underline-offset-4 transition-colors hover:text-gold-soft"
+          className="mt-2 text-sm text-background/60 underline decoration-gold-soft/40 underline-offset-4 transition-colors hover:text-gold-soft"
         >
           {siteConfig.email}
         </a>

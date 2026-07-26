@@ -10,7 +10,7 @@ const socialIcons = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-background px-6 py-12 sm:px-10">
+    <footer className="border-t border-ink/10 bg-background px-6 py-12 sm:px-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
         <div className="flex items-center gap-3">
           <Image
@@ -36,7 +36,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={item.label}
-                className="text-foreground/60 transition-colors hover:text-gold"
+                className="text-foreground/60 transition-colors hover:text-gold-deep"
               >
                 <Icon className="h-5 w-5" />
               </a>
