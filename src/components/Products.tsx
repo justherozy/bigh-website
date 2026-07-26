@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { products, siteConfig } from "@/lib/site-config";
+import Tilt3DCard from "@/components/Tilt3DCard";
 
 export default function Products() {
   return (
@@ -18,29 +19,30 @@ export default function Products() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
-            <Link
-              key={product.slug}
-              href={`/collections/${product.slug}`}
-              className="group flex flex-col bg-background text-left"
-            >
-              <div className="relative aspect-[3/4] overflow-hidden">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                />
-              </div>
-              <div className="flex flex-col gap-1 px-5 py-5">
-                <h3 className="text-lg text-foreground">{product.name}</h3>
-                <p className="text-xs uppercase tracking-widest text-gold/90">
-                  {product.category}
-                </p>
-              </div>
-            </Link>
+            <Tilt3DCard key={product.slug}>
+              <Link
+                href={`/collections/${product.slug}`}
+                className="group flex h-full flex-col bg-background text-left shadow-lg shadow-ink/10"
+              >
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                </div>
+                <div className="flex flex-col gap-1 px-5 py-5">
+                  <h3 className="text-lg text-foreground">{product.name}</h3>
+                  <p className="text-xs uppercase tracking-widest text-gold/90">
+                    {product.category}
+                  </p>
+                </div>
+              </Link>
+            </Tilt3DCard>
           ))}
         </div>
       </div>

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { categories, products, siteConfig } from "@/lib/site-config";
 import PageHero from "@/components/PageHero";
 import { WhatsAppIcon } from "@/components/icons";
+import Tilt3DCard from "@/components/Tilt3DCard";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ category: c.slug }));
@@ -78,36 +79,37 @@ export default async function ShopCategoryPage({
               Collections Featuring {category.label}
             </p>
             <div
-              className={`mx-auto mt-10 grid grid-cols-1 gap-px bg-line ${
+              className={`mx-auto mt-10 grid grid-cols-1 gap-6 ${
                 { 1: "max-w-sm", 2: "max-w-2xl sm:grid-cols-2", 3: "sm:grid-cols-3" }[
                   Math.min(related.length, 3) as 1 | 2 | 3
                 ]
               }`}
             >
               {related.map((product) => (
-                <Link
-                  key={product.slug}
-                  href={`/collections/${product.slug}`}
-                  className="group flex flex-col bg-background"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(min-width: 640px) 33vw, 100vw"
-                    />
-                  </div>
-                  <div className="px-5 py-4">
-                    <h3 className="text-lg text-foreground">
-                      {product.name}
-                    </h3>
-                    <p className="text-xs uppercase tracking-widest text-gold/90">
-                      {product.category}
-                    </p>
-                  </div>
-                </Link>
+                <Tilt3DCard key={product.slug}>
+                  <Link
+                    href={`/collections/${product.slug}`}
+                    className="group flex flex-col bg-background shadow-lg shadow-ink/10"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(min-width: 640px) 33vw, 100vw"
+                      />
+                    </div>
+                    <div className="px-5 py-4">
+                      <h3 className="text-lg text-foreground">
+                        {product.name}
+                      </h3>
+                      <p className="text-xs uppercase tracking-widest text-gold/90">
+                        {product.category}
+                      </p>
+                    </div>
+                  </Link>
+                </Tilt3DCard>
               ))}
             </div>
           </div>

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { products, siteConfig } from "@/lib/site-config";
 import PageHero from "@/components/PageHero";
 import { WhatsAppIcon } from "@/components/icons";
+import Tilt3DCard from "@/components/Tilt3DCard";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -74,29 +75,30 @@ export default async function CollectionPage({
           <p className="text-center text-xs uppercase tracking-[0.3em] text-gold">
             More To Explore
           </p>
-          <div className="mt-10 grid grid-cols-1 gap-px bg-line sm:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {others.map((other) => (
-              <Link
-                key={other.slug}
-                href={`/collections/${other.slug}`}
-                className="group flex flex-col bg-background"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={other.image}
-                    alt={other.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(min-width: 640px) 33vw, 100vw"
-                  />
-                </div>
-                <div className="px-5 py-4">
-                  <h3 className="text-lg text-foreground">{other.name}</h3>
-                  <p className="text-xs uppercase tracking-widest text-gold/90">
-                    {other.category}
-                  </p>
-                </div>
-              </Link>
+              <Tilt3DCard key={other.slug}>
+                <Link
+                  href={`/collections/${other.slug}`}
+                  className="group flex flex-col bg-background shadow-lg shadow-ink/10"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={other.image}
+                      alt={other.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(min-width: 640px) 33vw, 100vw"
+                    />
+                  </div>
+                  <div className="px-5 py-4">
+                    <h3 className="text-lg text-foreground">{other.name}</h3>
+                    <p className="text-xs uppercase tracking-widest text-gold/90">
+                      {other.category}
+                    </p>
+                  </div>
+                </Link>
+              </Tilt3DCard>
             ))}
           </div>
         </div>
