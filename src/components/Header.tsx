@@ -6,24 +6,24 @@ import MobileMenu from "@/components/MobileMenu";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-ink/10 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 sm:px-10">
+    <header className="fixed top-0 z-50 w-full border-b border-line bg-background">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/bigh-logo.jpeg"
             alt={`${siteConfig.fullName} logo`}
-            width={40}
-            height={40}
-            className="rounded-full object-cover"
+            width={36}
+            height={36}
+            className="object-cover"
             priority
           />
-          <span className="font-serif text-lg tracking-wide text-gold-deep">
+          <span className="text-sm uppercase tracking-[0.3em] text-foreground">
             {siteConfig.name}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm uppercase tracking-widest text-foreground/70 sm:flex">
-          <Link href="/" className="transition-colors hover:text-gold-deep">
+        <nav className="hidden items-center gap-9 text-xs uppercase tracking-[0.2em] text-foreground/80 sm:flex">
+          <Link href="/" className="transition-colors hover:text-muted">
             Home
           </Link>
           <NavDropdown
@@ -53,10 +53,10 @@ export default function Header() {
               href: "/collections/evening-elegance",
             }}
           />
-          <Link href="/#edit" className="transition-colors hover:text-gold-deep">
+          <Link href="/#edit" className="transition-colors hover:text-muted">
             The Edit
           </Link>
-          <a href="#contact" className="transition-colors hover:text-gold-deep">
+          <a href="#contact" className="transition-colors hover:text-muted">
             Contact
           </a>
         </nav>
@@ -64,7 +64,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="hidden rounded-full border border-gold px-4 py-1.5 text-xs uppercase tracking-widest text-gold-deep transition-colors hover:bg-gold hover:text-background sm:block"
+            className="hidden border border-foreground px-5 py-2 text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground hover:text-background sm:block"
           >
             Contact Us
           </a>

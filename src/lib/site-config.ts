@@ -3,12 +3,12 @@
 export const siteConfig = {
   name: "BigH",
   fullName: "BigH Style Hub",
-  tagline: "...the thread between you and elegance",
+  tagline: "the thread between you and elegance",
   description:
-    "BigH is one house, two crafts: BigH Style Hub for considered clothing, and BigH Footwears for footwear made with the same care. Timeless pieces for those who dress with intention, head to toe.",
+    "BigH is one house, two crafts: BigH Style Hub for considered clothing, and BigH Footwears for footwear made with the same care. Global tailoring discipline, worn alongside the colour and craft of Nigerian heritage dress.",
 
   // Background photo for the hero section (used as the video poster / fallback).
-  heroImage: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446",
+  heroImage: "https://images.unsplash.com/photo-1782566208081-6b5135fddf23",
   // Background video for the hero section.
   heroVideo: "/videos/hero.mp4",
 
@@ -18,26 +18,26 @@ export const siteConfig = {
     { label: "UK", number: "447459476730" },
   ],
 
-  // Contact emails per brand line.
-  emails: [
-    { label: "Style Hub", address: "bighstylehub@gmail.com" },
-    { label: "Footwears", address: "bighfootwears@gmail.com" },
-  ],
-
-  // TODO: replace TikTok/Facebook "#" with real profile URLs once available.
-  social: [
+  // One entry per brand line. Each field is used across the footer, contact section, and nav.
+  brands: [
     {
-      platform: "instagram" as const,
+      key: "stylehub",
       label: "BigH Style Hub",
-      href: "https://www.instagram.com/bigh_stylehub?igsh=MXZhN2Z3dnB2aXVsYw%3D%3D&utm_source=qr",
+      email: "bighstylehub@gmail.com",
+      instagram:
+        "https://www.instagram.com/bigh_stylehub?igsh=MXZhN2Z3dnB2aXVsYw%3D%3D&utm_source=qr",
+      tiktok: "https://www.tiktok.com/@bigh_stylehub?_r=1&_t=ZN-98MhmynoZfT",
+      facebook: "https://www.facebook.com/share/1Ei4ei3d2o/?mibextid=wwXIfr",
     },
     {
-      platform: "instagram" as const,
+      key: "footwears",
       label: "BigH Footwears",
-      href: "https://www.instagram.com/bigh_footwears?igsh=MXU3dXhvYTcyNW0yeA%3D%3D&utm_source=qr",
+      email: "bighfootwears@gmail.com",
+      instagram:
+        "https://www.instagram.com/bigh_footwears?igsh=MXU3dXhvYTcyNW0yeA%3D%3D&utm_source=qr",
+      tiktok: "https://www.tiktok.com/@bigh_footwears?_r=1&_t=ZN-98MhoJUTb7u",
+      facebook: "https://www.facebook.com/share/1ECyr99bzb/?mibextid=wwXIfr",
     },
-    { platform: "tiktok" as const, label: "TikTok", href: "#" },
-    { platform: "facebook" as const, label: "Facebook", href: "#" },
   ],
 };
 
@@ -65,20 +65,20 @@ export const products: Product[] = [
       "Everyday silhouettes built on clean lines and considered fabrics — pieces that anchor a wardrobe rather than chase a season.",
     longDescription:
       "The Signature Collection is where BigH begins: considered basics, cut from fabrics that age well and colours that never feel dated. This is the wardrobe foundation — the pieces you reach for first, season after season.",
-    accent: "#9c7a3c",
-    accentSoft: "#f1e6cf",
+    accent: "#141414",
+    accentSoft: "#ececec",
   },
   {
     slug: "evening-elegance",
     name: "Evening Elegance",
     category: "Occasion wear",
-    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae",
+    image: "https://images.unsplash.com/photo-1642808637173-070a839ddae2",
     description:
-      "Statement pieces for the nights that matter — tailored drama, rich colour, and details made to be noticed.",
+      "Aso-oke and agbada, tailored for the room you're about to walk into — traditional cloth, modern proportion.",
     longDescription:
-      "Evening Elegance is built for the moments that call for more — galas, dinners, the night you want to remember. Rich colour, sculpted silhouettes, and finishing details designed to catch the light and hold a room.",
-    accent: "#6e2a52",
-    accentSoft: "#f1dbe9",
+      "Evening Elegance is where BigH's Nigerian heritage speaks loudest — aso-oke, coral, and gele reworked with a tailoring hand for weddings, owambe, and the nights that call for ceremony. Made for two, worn by one.",
+    accent: "#8a6a2f",
+    accentSoft: "#eee4cf",
   },
   {
     slug: "everyday-refined",
@@ -89,8 +89,8 @@ export const products: Product[] = [
       "Elevated basics for real life — polished enough for the city, easy enough for every day.",
     longDescription:
       "Everyday Refined is casual luxury done properly: pieces polished enough for a client lunch, easy enough for a Sunday. It's the art of looking put-together without looking like you tried too hard.",
-    accent: "#8a3d2c",
-    accentSoft: "#f2ddd4",
+    accent: "#242424",
+    accentSoft: "#e9e9e9",
   },
   {
     slug: "accessories-edit",
@@ -101,8 +101,8 @@ export const products: Product[] = [
       "The details that complete a look — considered accessories chosen to pair effortlessly with every collection.",
     longDescription:
       "The Accessories Edit is proof that the smallest choices carry the most weight. Watches, jewellery, and finishing pieces selected to complete every other BigH collection, not compete with it.",
-    accent: "#3f3a34",
-    accentSoft: "#e7e3da",
+    accent: "#1a1a1a",
+    accentSoft: "#e7e7e7",
   },
 ];
 
@@ -125,10 +125,10 @@ export const categories: Category[] = [
     slug: "women",
     label: "Women",
     kicker: "Shop Women",
-    image: "https://images.unsplash.com/photo-1645561305502-63a9ba09ab09",
-    description: "Tailored, considered, unmistakably BigH.",
+    image: "https://images.unsplash.com/photo-1769451741943-7c0897deac21",
+    description: "Tailored Western lines, worn alongside gele and lace.",
     longDescription:
-      "From sculpted evening wear to refined daywear, the Women's edit spans every occasion BigH dresses for. New arrivals are added regularly — message us for the current in-stock edit while the full lookbook is being finalised.",
+      "From sculpted evening wear to aso-oke reworked for modern proportion, the Women's edit moves between two wardrobes at once. New arrivals are added regularly — message us for the current in-stock edit while the full lookbook is being finalised.",
     accent: "#7a2f4f",
     accentSoft: "#f2dde7",
     relatedCollections: ["evening-elegance", "everyday-refined"],
@@ -137,10 +137,10 @@ export const categories: Category[] = [
     slug: "men",
     label: "Men",
     kicker: "Shop Men",
-    image: "https://images.unsplash.com/photo-1619603364904-c0498317e145",
-    description: "Sharp tailoring, quiet confidence.",
+    image: "https://images.unsplash.com/photo-1782566208081-6b5135fddf23",
+    description: "Agbada and tailoring, cut with the same discipline.",
     longDescription:
-      "Outerwear, knitwear, and tailoring built around a simple idea: understated pieces with real presence. The Men's edit is being photographed now — reach out on WhatsApp for current availability.",
+      "Outerwear and tailoring built around a simple idea, applied to two traditions at once: the quiet confidence of Western menswear, and the presence of a well-cut agbada. The Men's edit is being photographed now — reach out on WhatsApp for current availability.",
     accent: "#33475b",
     accentSoft: "#dbe4ea",
     relatedCollections: ["signature-collection"],
@@ -180,6 +180,12 @@ export type EditorialSlide = {
 
 export const editorialSlides: EditorialSlide[] = [
   {
+    kicker: "Heritage",
+    title: "Two Wardrobes, One Hand",
+    copy: "An agbada tailored with the same discipline as a blazer. BigH exists in the space between Nigerian heritage dress and global tailoring, not choosing one over the other.",
+    image: "https://images.unsplash.com/photo-1648328168368-3a25f2152802",
+  },
+  {
     kicker: "Craft",
     title: "Crafted With Intention",
     copy: "Every BigH piece starts with a question: will this still feel right in ten years? Craftsmanship and considered fabric choices are non-negotiable.",
@@ -190,12 +196,6 @@ export const editorialSlides: EditorialSlide[] = [
     title: "Colour That Speaks",
     copy: "Fashion is a language before it's a product. We build colour stories that let you say something without saying a word.",
     image: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8",
-  },
-  {
-    kicker: "Individuality",
-    title: "Style With Personality",
-    copy: "Trends fade, personality doesn't. BigH pieces are designed to be worn your way — mixed, layered, and made personal.",
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
   },
   {
     kicker: "Detail",

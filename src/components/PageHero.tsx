@@ -38,7 +38,7 @@ export default function PageHero({
         >
           {kicker}
         </p>
-        <h1 className="mt-4 font-serif text-4xl leading-tight text-background sm:text-6xl">
+        <h1 className="mt-4 text-4xl leading-[1.05] tracking-tight text-background sm:text-6xl">
           {title}
         </h1>
         <p className="mt-5 max-w-xl text-background/85">{description}</p>

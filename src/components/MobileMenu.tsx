@@ -42,7 +42,7 @@ export default function MobileMenu() {
             </div>
 
             <nav className="mt-6 flex flex-col gap-8 text-lg">
-              <Link href="/" onClick={close} className="font-serif text-foreground">
+              <Link href="/" onClick={close} className="text-foreground">
                 Home
               </Link>
 
@@ -56,7 +56,7 @@ export default function MobileMenu() {
                       key={c.slug}
                       href={`/shop/${c.slug}`}
                       onClick={close}
-                      className="font-serif text-foreground"
+                      className="text-foreground"
                     >
                       {c.label}
                     </Link>
@@ -74,7 +74,7 @@ export default function MobileMenu() {
                       key={p.slug}
                       href={`/collections/${p.slug}`}
                       onClick={close}
-                      className="font-serif text-foreground"
+                      className="text-foreground"
                     >
                       {p.name}
                     </Link>
@@ -82,10 +82,10 @@ export default function MobileMenu() {
                 </div>
               </div>
 
-              <Link href="/#edit" onClick={close} className="font-serif text-foreground">
+              <Link href="/#edit" onClick={close} className="text-foreground">
                 The Edit
               </Link>
-              <a href="#contact" onClick={close} className="font-serif text-foreground">
+              <a href="#contact" onClick={close} className="text-foreground">
                 Contact
               </a>
             </nav>

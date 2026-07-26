@@ -62,7 +62,7 @@ export default async function ShopCategoryPage({
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm uppercase tracking-widest text-background transition-opacity hover:opacity-90"
+            className="mt-8 inline-flex items-center gap-2 px-7 py-3 text-xs uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-90"
             style={{ backgroundColor: category.accent }}
           >
             <WhatsAppIcon className="h-4 w-4" />
@@ -74,15 +74,21 @@ export default async function ShopCategoryPage({
       {related.length > 0 && (
         <section className="bg-background px-6 py-20 sm:px-10">
           <div className="mx-auto max-w-6xl">
-            <p className="text-center text-xs uppercase tracking-[0.3em] text-gold-deep">
+            <p className="text-center text-xs uppercase tracking-[0.3em] text-gold">
               Collections Featuring {category.label}
             </p>
-            <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              className={`mx-auto mt-10 grid grid-cols-1 gap-px bg-line ${
+                { 1: "max-w-sm", 2: "max-w-2xl sm:grid-cols-2", 3: "sm:grid-cols-3" }[
+                  Math.min(related.length, 3) as 1 | 2 | 3
+                ]
+              }`}
+            >
               {related.map((product) => (
                 <Link
                   key={product.slug}
                   href={`/collections/${product.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-2xl bg-surface shadow-md shadow-ink/5 ring-1 ring-ink/5 transition-shadow hover:shadow-xl"
+                  className="group flex flex-col bg-background"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -94,10 +100,10 @@ export default async function ShopCategoryPage({
                     />
                   </div>
                   <div className="px-5 py-4">
-                    <h3 className="font-serif text-lg text-foreground">
+                    <h3 className="text-lg text-foreground">
                       {product.name}
                     </h3>
-                    <p className="text-xs uppercase tracking-widest text-gold-deep/90">
+                    <p className="text-xs uppercase tracking-widest text-gold/90">
                       {product.category}
                     </p>
                   </div>

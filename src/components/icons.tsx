@@ -32,3 +32,12 @@ export function FacebookIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function MailIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className}>
+      <rect x="2.5" y="4.5" width="19" height="15" rx="1.5" />
+      <path d="M3.5 6l8.5 7 8.5-7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}

@@ -60,7 +60,7 @@ export default async function CollectionPage({
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm uppercase tracking-widest text-background transition-opacity hover:opacity-90"
+            className="mt-8 inline-flex items-center gap-2 px-7 py-3 text-xs uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-90"
             style={{ backgroundColor: product.accent }}
           >
             <WhatsAppIcon className="h-4 w-4" />
@@ -71,15 +71,15 @@ export default async function CollectionPage({
 
       <section className="bg-background px-6 py-20 sm:px-10">
         <div className="mx-auto max-w-6xl">
-          <p className="text-center text-xs uppercase tracking-[0.3em] text-gold-deep">
+          <p className="text-center text-xs uppercase tracking-[0.3em] text-gold">
             More To Explore
           </p>
-          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-px bg-line sm:grid-cols-3">
             {others.map((other) => (
               <Link
                 key={other.slug}
                 href={`/collections/${other.slug}`}
-                className="group flex flex-col overflow-hidden rounded-2xl bg-surface shadow-md shadow-ink/5 ring-1 ring-ink/5 transition-shadow hover:shadow-xl"
+                className="group flex flex-col bg-background"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -91,10 +91,8 @@ export default async function CollectionPage({
                   />
                 </div>
                 <div className="px-5 py-4">
-                  <h3 className="font-serif text-lg text-foreground">
-                    {other.name}
-                  </h3>
-                  <p className="text-xs uppercase tracking-widest text-gold-deep/90">
+                  <h3 className="text-lg text-foreground">{other.name}</h3>
+                  <p className="text-xs uppercase tracking-widest text-gold/90">
                     {other.category}
                   </p>
                 </div>

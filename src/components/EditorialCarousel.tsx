@@ -25,15 +25,15 @@ export default function EditorialCarousel() {
     <section id="edit" className="scroll-mt-24 bg-surface-muted px-6 py-24 sm:px-10">
       <div className="mx-auto max-w-5xl">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold-deep">
+          <p className="text-xs uppercase tracking-[0.3em] text-gold">
             The Edit
           </p>
-          <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
+          <h2 className="mt-3 text-3xl tracking-tight text-foreground sm:text-4xl">
             Fashion, considered
           </h2>
         </div>
 
-        <div className="relative mt-14 overflow-hidden rounded-3xl bg-surface shadow-xl shadow-ink/5">
+        <div className="relative mt-14 bg-surface">
           <div className="relative aspect-[16/10] w-full sm:aspect-[16/7]">
             <AnimatePresence mode="wait">
               <motion.div
@@ -54,10 +54,10 @@ export default function EditorialCarousel() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
 
                 <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 text-left sm:p-10">
-                  <p className="text-xs uppercase tracking-[0.3em] text-gold-soft">
+                  <p className="text-xs uppercase tracking-[0.3em] text-gold">
                     {slide.kicker}
                   </p>
-                  <h3 className="max-w-md font-serif text-2xl text-background sm:text-3xl">
+                  <h3 className="max-w-md text-2xl tracking-tight text-background sm:text-3xl">
                     {slide.title}
                   </h3>
                   <p className="max-w-lg text-sm text-background/85 sm:text-base">
@@ -71,7 +71,7 @@ export default function EditorialCarousel() {
               type="button"
               aria-label="Previous slide"
               onClick={() => goTo(index - 1)}
-              className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-background/80 text-ink backdrop-blur transition-colors hover:bg-background sm:left-5"
+              className="absolute left-0 top-1/2 flex h-11 w-9 -translate-y-1/2 items-center justify-center bg-background/70 text-ink transition-colors hover:bg-background"
             >
               &#8592;
             </button>
@@ -79,7 +79,7 @@ export default function EditorialCarousel() {
               type="button"
               aria-label="Next slide"
               onClick={() => goTo(index + 1)}
-              className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-background/80 text-ink backdrop-blur transition-colors hover:bg-background sm:right-5"
+              className="absolute right-0 top-1/2 flex h-11 w-9 -translate-y-1/2 items-center justify-center bg-background/70 text-ink transition-colors hover:bg-background"
             >
               &#8594;
             </button>
@@ -92,8 +92,8 @@ export default function EditorialCarousel() {
                 type="button"
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => goTo(i)}
-                className={`h-2 rounded-full transition-all ${
-                  i === index ? "w-6 bg-gold" : "w-2 bg-ink/20"
+                className={`h-px transition-all ${
+                  i === index ? "w-8 bg-foreground" : "w-4 bg-line"
                 }`}
               />
             ))}
