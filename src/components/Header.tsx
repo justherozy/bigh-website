@@ -32,6 +32,12 @@ export default function Header() {
               label: c.label,
               href: `/shop/${c.slug}`,
             }))}
+            feature={{
+              image: categories.find((c) => c.slug === "shoes")!.image,
+              title: "The Footwear Edit",
+              subtitle: "Shop Shoes",
+              href: "/shop/shoes",
+            }}
           />
           <NavDropdown
             label="Collections"
@@ -39,6 +45,13 @@ export default function Header() {
               label: p.name,
               href: `/collections/${p.slug}`,
             }))}
+            feature={{
+              image: products.find((p) => p.slug === "evening-elegance")!
+                .image,
+              title: "Evening Elegance",
+              subtitle: "View Collection",
+              href: "/collections/evening-elegance",
+            }}
           />
           <Link href="/#edit" className="transition-colors hover:text-gold-deep">
             The Edit

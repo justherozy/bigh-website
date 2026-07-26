@@ -31,12 +31,17 @@ export default function ContactCTA() {
           ))}
         </div>
 
-        <a
-          href={`mailto:${siteConfig.email}`}
-          className="mt-2 text-sm text-background/60 underline decoration-gold-soft/40 underline-offset-4 transition-colors hover:text-gold-soft"
-        >
-          {siteConfig.email}
-        </a>
+        <div className="mt-2 flex flex-col gap-1 text-sm text-background/60 sm:flex-row sm:gap-6">
+          {siteConfig.emails.map((item) => (
+            <a
+              key={item.address}
+              href={`mailto:${item.address}`}
+              className="underline decoration-gold-soft/40 underline-offset-4 transition-colors hover:text-gold-soft"
+            >
+              {item.label}: {item.address}
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

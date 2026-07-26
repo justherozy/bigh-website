@@ -5,10 +5,12 @@ export const siteConfig = {
   fullName: "BigH Style Hub",
   tagline: "...the thread between you and elegance",
   description:
-    "BigH Style Hub is a fashion brand crafting timeless, elegant pieces for those who dress with intention.",
+    "BigH is one house, two crafts: BigH Style Hub for considered clothing, and BigH Footwears for footwear made with the same care. Timeless pieces for those who dress with intention, head to toe.",
 
-  // Background photo for the hero section.
+  // Background photo for the hero section (used as the video poster / fallback).
   heroImage: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446",
+  // Background video for the hero section.
+  heroVideo: "/videos/hero.mp4",
 
   // WhatsApp numbers (used for "Contact Us" buttons). Format: country code + number, no spaces or symbols.
   whatsapp: [
@@ -16,15 +18,27 @@ export const siteConfig = {
     { label: "UK", number: "447459476730" },
   ],
 
-  // TODO: replace "#" with real profile URLs once available.
-  social: [
-    { label: "Instagram", href: "#" },
-    { label: "TikTok", href: "#" },
-    { label: "Facebook", href: "#" },
+  // Contact emails per brand line.
+  emails: [
+    { label: "Style Hub", address: "bighstylehub@gmail.com" },
+    { label: "Footwears", address: "bighfootwears@gmail.com" },
   ],
 
-  // TODO: replace with a real contact email once available.
-  email: "hello@bigh.com",
+  // TODO: replace TikTok/Facebook "#" with real profile URLs once available.
+  social: [
+    {
+      platform: "instagram" as const,
+      label: "BigH Style Hub",
+      href: "https://www.instagram.com/bigh_stylehub?igsh=MXZhN2Z3dnB2aXVsYw%3D%3D&utm_source=qr",
+    },
+    {
+      platform: "instagram" as const,
+      label: "BigH Footwears",
+      href: "https://www.instagram.com/bigh_footwears?igsh=MXU3dXhvYTcyNW0yeA%3D%3D&utm_source=qr",
+    },
+    { platform: "tiktok" as const, label: "TikTok", href: "#" },
+    { platform: "facebook" as const, label: "Facebook", href: "#" },
+  ],
 };
 
 export type Product = {

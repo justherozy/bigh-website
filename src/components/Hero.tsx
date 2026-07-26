@@ -1,10 +1,20 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!mq.matches) {
+      videoRef.current?.play().catch(() => {});
+    }
+  }, []);
+
   const mx = useMotionValue(0.5);
   const my = useMotionValue(0.5);
   const smx = useSpring(mx, { stiffness: 60, damping: 20 });
@@ -29,24 +39,28 @@ export default function Hero() {
       onPointerMove={handleMove}
       className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24 text-center"
     >
-      <motion.div
-        style={{ x: bgX, y: bgY }}
-        className="absolute inset-[-3%]"
-      >
-        <Image
-          src={siteConfig.heroImage}
-          alt=""
-          fill
-          priority
-          className="object-cover object-top"
-        />
+      <motion.div style={{ x: bgX, y: bgY }} className="absolute inset-[-3%]">
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          poster={siteConfig.heroImage}
+          className="h-full w-full object-cover object-top"
+        >
+          <source src={siteConfig.heroVideo} type="video/mp4" />
+        </video>
       </motion.div>
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background"
+        className="absolute inset-0 bg-gradient-to-b from-ink/10 via-background/35 to-background"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-background/20"
       />
 
-      <div className="relative z-10 flex flex-col items-center gap-8 px-6">
+      <div className="relative z-10 flex flex-col items-center gap-8 rounded-[2.5rem] bg-background/45 px-8 py-14 shadow-2xl shadow-ink/10 backdrop-blur-md sm:px-16">
         <motion.div
           style={{
             x: logoX,
