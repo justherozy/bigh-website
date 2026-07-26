@@ -3,7 +3,7 @@ import { WhatsAppIcon } from "@/components/icons";
 
 export default function ContactCTA() {
   return (
-    <section id="contact" className="bg-ink px-6 py-24 sm:px-10">
+    <section id="contact" className="scroll-mt-24 bg-ink px-6 py-24 sm:px-10">
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-gold-soft">
           Get In Touch

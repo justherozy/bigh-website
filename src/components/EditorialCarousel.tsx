@@ -22,7 +22,7 @@ export default function EditorialCarousel() {
   };
 
   return (
-    <section className="bg-surface-muted px-6 py-24 sm:px-10">
+    <section id="edit" className="scroll-mt-24 bg-surface-muted px-6 py-24 sm:px-10">
       <div className="mx-auto max-w-5xl">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-gold-deep">
