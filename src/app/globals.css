@@ -1,14 +1,47 @@
 @import "tailwindcss";
 
+/*
+  Design foundation
+  ------------------
+  Palette: strictly four colours — black, white, one off-white, one accent.
+  Everything else (muted text, hairlines) is a tint of black, not a new hue.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #121212;
-  --muted: #6d6d6d;
-  --line: rgba(18, 18, 18, 0.12);
-  --gold: #a3812f;
-  --surface: #ffffff;
-  --surface-muted: #f4f3f1;
-  --ink: #0a0a0a;
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --off-white: #f5f4f1;
+  --accent: #a3812f;
+
+  /* Semantic aliases used throughout components. */
+  --background: var(--white);
+  --foreground: var(--black);
+  --ink: var(--black);
+  --surface: var(--white);
+  --surface-muted: var(--off-white);
+  --gold: var(--accent);
+  --muted: rgb(10 10 10 / 62%);
+  --line: rgb(10 10 10 / 12%);
+
+  /*
+    Spacing scale (4px base, matches Tailwind's default steps).
+    --space-section-* sets the standard for section-level padding —
+    generous by default, slightly larger on wider viewports.
+  */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  --space-section-x: var(--space-md);
+  --space-section-x-lg: var(--space-xl);
+  --space-section-y: var(--space-3xl);
+  --space-section-y-lg: var(--space-4xl);
 }
 
 @theme inline {
@@ -23,10 +56,34 @@
   --color-surface-muted: var(--surface-muted);
   --color-ink: var(--ink);
   --font-sans: var(--font-inter);
+  --font-display: var(--font-bodoni);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Headlines get the display face automatically; body/UI stays on the sans. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* Reusable section wrapper: the generous, consistent padding standard. */
+.section {
+  padding-inline: var(--space-section-x);
+  padding-block: var(--space-section-y);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-inline: var(--space-section-x-lg);
+    padding-block: var(--space-section-y-lg);
+  }
 }
