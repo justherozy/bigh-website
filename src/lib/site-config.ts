@@ -7,10 +7,8 @@ export const siteConfig = {
   description:
     "BigH is one house, two crafts: BigH Style Hub for considered clothing, and BigH Footwears for footwear made with the same care. Global tailoring discipline, worn alongside the colour and craft of Nigerian heritage dress.",
 
-  // Background photo for the hero section (used as the video poster / fallback).
+  // Full-bleed background photo for the hero section.
   heroImage: "https://images.unsplash.com/photo-1782566208081-6b5135fddf23",
-  // Background video for the hero section.
-  heroVideo: "/videos/hero.mp4",
 
   // WhatsApp numbers (used for "Contact Us" buttons). Format: country code + number, no spaces or symbols.
   whatsapp: [
@@ -46,14 +44,16 @@ export type Product = {
   name: string;
   category: string;
   image: string;
+  hoverImage: string;
   description: string;
   longDescription: string;
   accent: string;
   accentSoft: string;
 };
 
-// TODO: swap "image" for real product photography whenever it's ready — same field, just a
-// new URL or a local path like "/products/dress-1.jpg" dropped into the public folder.
+// TODO: swap "image"/"hoverImage" for real product photography whenever it's ready — same
+// fields, just a new URL or a local path like "/products/dress-1.jpg" in the public folder.
+// "hoverImage" is what the homepage grid swaps to on hover.
 // Each collection gets its own page at /collections/[slug] with its own accent colour.
 export const products: Product[] = [
   {
@@ -61,6 +61,7 @@ export const products: Product[] = [
     name: "Signature Collection",
     category: "Ready-to-wear",
     image: "https://images.unsplash.com/photo-1445205170230-053b83016050",
+    hoverImage: "https://images.unsplash.com/photo-1769107805412-90d9191d53e9",
     description:
       "Everyday silhouettes built on clean lines and considered fabrics — pieces that anchor a wardrobe rather than chase a season.",
     longDescription:
@@ -73,6 +74,7 @@ export const products: Product[] = [
     name: "Evening Elegance",
     category: "Occasion wear",
     image: "https://images.unsplash.com/photo-1642808637173-070a839ddae2",
+    hoverImage: "https://images.unsplash.com/photo-1749657726882-a4df541652a2",
     description:
       "Aso-oke and agbada, tailored for the room you're about to walk into — traditional cloth, modern proportion.",
     longDescription:
@@ -85,6 +87,7 @@ export const products: Product[] = [
     name: "Everyday Refined",
     category: "Casual luxury",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b",
+    hoverImage: "https://images.unsplash.com/photo-1518204928-69aa89a61291",
     description:
       "Elevated basics for real life — polished enough for the city, easy enough for every day.",
     longDescription:
@@ -97,6 +100,7 @@ export const products: Product[] = [
     name: "Accessories Edit",
     category: "Finishing touches",
     image: "https://images.unsplash.com/photo-1544441893-675973e31985",
+    hoverImage: "https://images.unsplash.com/photo-1561828995-aa79a2db86dd",
     description:
       "The details that complete a look — considered accessories chosen to pair effortlessly with every collection.",
     longDescription:
@@ -171,6 +175,13 @@ export const categories: Category[] = [
   },
 ];
 
+export const editorialFeature = {
+  kicker: "Heritage",
+  title: "Two Wardrobes, One Hand",
+  copy: "An agbada tailored with the same discipline as a blazer. BigH exists in the space between Nigerian heritage dress and global tailoring, not choosing one over the other.",
+  image: "https://images.unsplash.com/photo-1648328168368-3a25f2152802",
+};
+
 export type EditorialSlide = {
   kicker: string;
   title: string;
@@ -178,6 +189,8 @@ export type EditorialSlide = {
   image: string;
 };
 
+// Powers the full-bleed rotating feature on the homepage ("The Edit").
+// TODO: swap these Unsplash images for real campaign photography whenever it's ready.
 export const editorialSlides: EditorialSlide[] = [
   {
     kicker: "Heritage",
@@ -187,20 +200,32 @@ export const editorialSlides: EditorialSlide[] = [
   },
   {
     kicker: "Craft",
-    title: "Crafted With Intention",
-    copy: "Every BigH piece starts with a question: will this still feel right in ten years? Craftsmanship and considered fabric choices are non-negotiable.",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d",
+    title: "Cloth With Ceremony",
+    copy: "Aso-oke and coral, reworked with a tailoring hand. Evening Elegance is built for the room you're about to walk into.",
+    image: "https://images.unsplash.com/photo-1642808637173-070a839ddae2",
   },
   {
-    kicker: "Colour",
-    title: "Colour That Speaks",
-    copy: "Fashion is a language before it's a product. We build colour stories that let you say something without saying a word.",
-    image: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8",
+    kicker: "Details",
+    title: "The Last Ten Percent",
+    copy: "The smallest choices carry the most weight. Finishing pieces selected to complete a look, not compete with it.",
+    image: "https://images.unsplash.com/photo-1544441893-675973e31985",
   },
   {
-    kicker: "Detail",
-    title: "Details That Delight",
-    copy: "The finishing touch is never an afterthought. From stitch to clasp, the small decisions are where elegance actually lives.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    kicker: "Silhouette",
+    title: "Tailored, Not Traded",
+    copy: "Sculpted evening wear beside aso-oke cut for modern proportion. One wardrobe, moving between two traditions.",
+    image: "https://images.unsplash.com/photo-1769451741943-7c0897deac21",
+  },
+  {
+    kicker: "Footwear",
+    title: "Built From the Ground Up",
+    copy: "Polished leather and everyday staples, crafted to carry every other collection.",
+    image: "https://images.unsplash.com/photo-1549290127-7f758fdadff7",
+  },
+  {
+    kicker: "Everyday",
+    title: "Considered, Not Costumed",
+    copy: "Polished enough for a client lunch, easy enough for a Sunday — the art of looking put-together without looking like you tried.",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b",
   },
 ];
