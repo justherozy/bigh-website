@@ -83,3 +83,59 @@ export function CloseIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function HeartIcon({
+  className,
+  filled,
+}: {
+  className?: string;
+  filled?: boolean;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill={filled ? "currentColor" : "none"}
+      stroke="currentColor"
+      strokeWidth="1.6"
+      className={className}
+    >
+      <path
+        d="M12 20.3S3.5 15.4 3.5 9.4C3.5 6.4 5.8 4.5 8.3 4.5c1.7 0 3.1.9 3.7 2.2.6-1.3 2-2.2 3.7-2.2 2.5 0 4.8 1.9 4.8 4.9 0 6-8.5 10.9-8.5 10.9z"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function BagIcon({
+  className,
+  filled,
+}: {
+  className?: string;
+  filled?: boolean;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill={filled ? "currentColor" : "none"}
+      stroke="currentColor"
+      strokeWidth="1.6"
+      className={className}
+    >
+      <path
+        d="M6 8h12l-1 12.5a1.5 1.5 0 01-1.5 1.5h-7a1.5 1.5 0 01-1.5-1.5L6 8z"
+        strokeLinejoin="round"
+      />
+      <path d="M9 8V6a3 3 0 016 0v2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function PersonIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className}>
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M4.5 20c1.4-3.8 4.5-6 7.5-6s6.1 2.2 7.5 6" strokeLinecap="round" />
+    </svg>
+  );
+}

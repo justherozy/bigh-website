@@ -6,6 +6,7 @@ import { products, siteConfig } from "@/lib/site-config";
 import PageHero from "@/components/PageHero";
 import { WhatsAppIcon } from "@/components/icons";
 import Tilt3DCard from "@/components/Tilt3DCard";
+import CollectionActions from "@/components/CollectionActions";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -67,6 +68,8 @@ export default async function CollectionPage({
             <WhatsAppIcon className="h-4 w-4" />
             Enquire on WhatsApp
           </a>
+
+          <CollectionActions slug={product.slug} accent={product.accent} />
         </div>
       </section>
 
