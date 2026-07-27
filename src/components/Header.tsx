@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { siteConfig, categories, products } from "@/lib/site-config";
-import NavDropdown from "@/components/NavDropdown";
-import MobileMenu from "@/components/MobileMenu";
+import { siteConfig } from "@/lib/site-config";
+import NavOverlay from "@/components/NavOverlay";
+import { WhatsAppIcon } from "@/components/icons";
 
 export default function Header() {
   return (
@@ -22,53 +22,23 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 text-xs uppercase tracking-[0.2em] text-foreground/80 sm:flex">
-          <Link href="/" className="transition-colors hover:text-muted">
-            Home
-          </Link>
-          <NavDropdown
-            label="Shop"
-            items={categories.map((c) => ({
-              label: c.label,
-              href: `/shop/${c.slug}`,
-            }))}
-            feature={{
-              image: categories.find((c) => c.slug === "shoes")!.image,
-              title: "The Footwear Edit",
-              subtitle: "Shop Shoes",
-              href: "/shop/shoes",
-            }}
-          />
-          <NavDropdown
-            label="Collections"
-            items={products.map((p) => ({
-              label: p.name,
-              href: `/collections/${p.slug}`,
-            }))}
-            feature={{
-              image: products.find((p) => p.slug === "evening-elegance")!
-                .image,
-              title: "Evening Elegance",
-              subtitle: "View Collection",
-              href: "/collections/evening-elegance",
-            }}
-          />
-          <Link href="/#edit" className="transition-colors hover:text-muted">
-            The Edit
-          </Link>
-          <a href="#contact" className="transition-colors hover:text-muted">
-            Contact
-          </a>
-        </nav>
-
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 sm:gap-8">
           <a
             href="#contact"
-            className="hidden border border-foreground px-5 py-2 text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground hover:text-background sm:block"
+            className="text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:text-muted"
           >
-            Contact Us
+            Contact
           </a>
-          <MobileMenu />
+          <a
+            href={`https://wa.me/${siteConfig.whatsapp[0].number}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Message us on WhatsApp"
+            className="flex h-9 w-9 items-center justify-center text-foreground transition-colors hover:text-muted"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+          </a>
+          <NavOverlay />
         </div>
       </div>
     </header>
