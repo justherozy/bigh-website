@@ -1,13 +1,15 @@
 import Hero from "@/components/Hero";
-import EditorialFeature from "@/components/EditorialFeature";
-import ShopGrid from "@/components/ShopGrid";
+import EditorialCarousel from "@/components/EditorialCarousel";
+import CategoryShowcase from "@/components/CategoryShowcase";
+import Products from "@/components/Products";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <EditorialFeature />
-      <ShopGrid />
+      <EditorialCarousel />
+      <CategoryShowcase />
+      <Products />
     </>
   );
 }
