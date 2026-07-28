@@ -222,3 +222,15 @@ export const editorialSlides: EditorialSlide[] = [
     image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d",
   },
 ];
+
+// Rotating brand-philosophy statements shown in the quiet section between
+// the hero and The Edit. Keep these short — one or two sentences, read aloud
+// in under five seconds.
+export const brandStatements: string[] = [
+  "Fashion is not what you wear — it's the discipline behind it. BigH is built on that discipline, one considered piece at a time.",
+  "We don't design for trends. We design for the version of you that still looks right ten years from now.",
+  "Every BigH piece carries two traditions in one hand: the precision of global tailoring, and the soul of Nigerian craft.",
+  "Confidence isn't loud. It's a perfectly cut shoulder, a hem that falls exactly right, a colour chosen on purpose.",
+  "We measure success one way: pieces our clients still reach for, season after season.",
+  "This is dressing with intention — for the room you're walking into, and the one you're building.",
+];
