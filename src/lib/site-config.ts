@@ -181,26 +181,44 @@ export type EditorialSlide = {
 export const editorialSlides: EditorialSlide[] = [
   {
     kicker: "Heritage",
-    title: "Two Wardrobes, One Hand",
-    copy: "An agbada tailored with the same discipline as a blazer. BigH exists in the space between Nigerian heritage dress and global tailoring, not choosing one over the other.",
+    title: "Wear Your Roots, Cut For Now",
+    copy: "Aso-oke and agbada tailored with the same discipline as a blazer. Heritage dressing you'll reach for again — not just for one big day.",
     image: "https://images.unsplash.com/photo-1648328168368-3a25f2152802",
   },
   {
     kicker: "Craft",
-    title: "Crafted With Intention",
-    copy: "Every BigH piece starts with a question: will this still feel right in ten years? Craftsmanship and considered fabric choices are non-negotiable.",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d",
+    title: "Nothing Machine-Made About It",
+    copy: "Every stitch is placed by hand, not stamped by a factory line. Buy once, wear for years — that's the promise behind every BigH piece.",
+    image: "https://images.unsplash.com/photo-1674077342248-9c6484a77034",
   },
   {
     kicker: "Colour",
-    title: "Colour That Speaks",
-    copy: "Fashion is a language before it's a product. We build colour stories that let you say something without saying a word.",
+    title: "Colour That Gets You Noticed",
+    copy: "Some pieces whisper. Ours are built to turn heads the moment you walk in. If you want to disappear into a crowd, BigH isn't for you.",
     image: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8",
   },
   {
     kicker: "Detail",
-    title: "Details That Delight",
-    copy: "The finishing touch is never an afterthought. From stitch to clasp, the small decisions are where elegance actually lives.",
+    title: "The Finish Is The Difference",
+    copy: "Anyone can sell a shirt. Few get the collar, the button, the hem exactly right. That difference is why our customers come back.",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+  },
+  {
+    kicker: "Occasion",
+    title: "Dressed Right, Remembered Forever",
+    copy: "Weddings, owambe, the big entrance — these are the days people photograph for years. Make sure what you're wearing earns its place in every shot.",
+    image: "https://images.unsplash.com/photo-1682903702424-2bf1c8e4e12b",
+  },
+  {
+    kicker: "Confidence",
+    title: "Walk In Like You Own The Room",
+    copy: "The right fit changes how you carry yourself before you say a word. That's not vanity — that's what considered tailoring actually does.",
+    image: "https://images.unsplash.com/photo-1782462238852-ac00d3403c32",
+  },
+  {
+    kicker: "Availability",
+    title: "Made To Order, Not Mass Produced",
+    copy: "We don't flood racks with hundreds of the same piece. Once it's gone, it's gone — message us before your size does.",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d",
   },
 ];
