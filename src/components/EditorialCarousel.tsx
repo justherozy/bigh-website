@@ -92,6 +92,7 @@ export default function EditorialCarousel() {
               fill
               priority={index === 0}
               className="object-cover"
+              style={{ objectPosition: slide.focal ?? "center" }}
               sizes="100vw"
             />
           </motion.div>

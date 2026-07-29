@@ -176,6 +176,10 @@ export type EditorialSlide = {
   title: string;
   copy: string;
   image: string;
+  // CSS object-position for the background image. Defaults to "center".
+  // Portrait-oriented photos need this tuned so wide desktop viewports
+  // (which crop hard vertically) keep the subject's face in frame.
+  focal?: string;
 };
 
 export const editorialSlides: EditorialSlide[] = [
@@ -184,6 +188,7 @@ export const editorialSlides: EditorialSlide[] = [
     title: "Wear Your Roots, Cut For Now",
     copy: "Aso-oke and agbada tailored with the same discipline as a blazer. Heritage dressing you'll reach for again — not just for one big day.",
     image: "https://images.unsplash.com/photo-1648328168368-3a25f2152802",
+    focal: "center 20%",
   },
   {
     kicker: "Craft",
@@ -196,24 +201,28 @@ export const editorialSlides: EditorialSlide[] = [
     title: "Colour That Gets You Noticed",
     copy: "Some pieces whisper. Ours are built to turn heads the moment you walk in. If you want to disappear into a crowd, BigH isn't for you.",
     image: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8",
+    focal: "center 10%",
   },
   {
     kicker: "Detail",
     title: "The Finish Is The Difference",
     copy: "Anyone can sell a shirt. Few get the collar, the button, the hem exactly right. That difference is why our customers come back.",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    focal: "center 10%",
   },
   {
     kicker: "Occasion",
     title: "Dressed Right, Remembered Forever",
     copy: "Weddings, owambe, the big entrance — these are the days people photograph for years. Make sure what you're wearing earns its place in every shot.",
     image: "https://images.unsplash.com/photo-1682903702424-2bf1c8e4e12b",
+    focal: "center 15%",
   },
   {
     kicker: "Confidence",
     title: "Walk In Like You Own The Room",
     copy: "The right fit changes how you carry yourself before you say a word. That's not vanity — that's what considered tailoring actually does.",
     image: "https://images.unsplash.com/photo-1782462238852-ac00d3403c32",
+    focal: "center 15%",
   },
   {
     kicker: "Availability",
