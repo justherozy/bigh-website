@@ -28,12 +28,12 @@ export const siteConfig = {
     {
       src: "/videos/hero-3.mp4",
       poster:
-        "https://images.pexels.com/videos/38299944/pexels-photo-38299944.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "https://images.pexels.com/videos/27939222/african-culture-african-tradition-agbada-ancestral-worship-27939222.jpeg?auto=compress&cs=tinysrgb&w=1920",
     },
     {
       src: "/videos/hero-4.mp4",
       poster:
-        "https://images.pexels.com/videos/36743139/pexels-photo-36743139.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "https://images.pexels.com/videos/31708205/pexels-photo-31708205.jpeg?auto=compress&cs=tinysrgb&w=1920",
     },
   ],
 
