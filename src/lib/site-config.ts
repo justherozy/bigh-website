@@ -181,7 +181,7 @@ export const categories: Category[] = [
     slug: "shoes",
     label: "Shoes",
     kicker: "Shop Shoes",
-    image: "https://images.unsplash.com/photo-1549290127-7f758fdadff7",
+    image: "/shoes/shoe-loafers-tan-white.jpg",
     description: "Considered footwear, crafted for comfort.",
     longDescription:
       "From polished leather to everyday staples, the BigH footwear edit is crafted to carry every other collection. Full catalogue coming soon — message us for the current selection.",
@@ -189,6 +189,23 @@ export const categories: Category[] = [
     accentSoft: "#e9e0d5",
     relatedCollections: ["accessories-edit"],
   },
+];
+
+export type ShoeGalleryItem = {
+  image: string;
+  alt: string;
+};
+
+// Real product shots pulled from @bigh_footwears on Instagram — shown as a
+// gallery on the Shoes category page. Update this list as new stock drops.
+export const shoeGallery: ShoeGalleryItem[] = [
+  { image: "/shoes/shoe-loafers-black.jpg", alt: "Black leather penny loafers" },
+  { image: "/shoes/shoe-loafers-tan-white.jpg", alt: "Two-tone tan and white leather loafers" },
+  { image: "/shoes/shoe-mules-velvet-black.jpg", alt: "Black velvet crystal-embellished mules" },
+  { image: "/shoes/shoe-slides-duo.jpg", alt: "Woven leather slides in black and tan" },
+  { image: "/shoes/shoe-loafer-embroidered.jpg", alt: "Embroidered suede loafer" },
+  { image: "/shoes/shoe-mules-knit-grey.jpg", alt: "Grey knit buckle mules" },
+  { image: "/shoes/shoe-sandals-green.jpg", alt: "Green suede H-strap sandals" },
 ];
 
 export type EditorialSlide = {

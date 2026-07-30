@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { categories, products, siteConfig } from "@/lib/site-config";
+import { categories, products, shoeGallery, siteConfig } from "@/lib/site-config";
 import PageHero from "@/components/PageHero";
 import { WhatsAppIcon } from "@/components/icons";
 import Tilt3DCard from "@/components/Tilt3DCard";
@@ -71,6 +71,48 @@ export default async function ShopCategoryPage({
           </a>
         </div>
       </section>
+
+      {slug === "shoes" && shoeGallery.length > 0 && (
+        <section className="bg-background px-6 py-20 sm:px-10">
+          <div className="mx-auto max-w-6xl">
+            <p className="text-center text-xs uppercase tracking-[0.3em] text-gold">
+              Fresh From The Store
+            </p>
+            <h2 className="mt-3 text-center text-3xl tracking-tight text-foreground sm:text-4xl">
+              As Seen On Instagram
+            </h2>
+            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4">
+              {shoeGallery.map((item) => (
+                <a
+                  key={item.image}
+                  href="https://www.instagram.com/bigh_footwears"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block aspect-square overflow-hidden bg-surface-muted"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 23vw, (min-width: 640px) 31vw, 46vw"
+                  />
+                </a>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <a
+                href="https://www.instagram.com/bigh_footwears"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs uppercase tracking-[0.25em] text-gold underline underline-offset-4 transition-colors hover:text-foreground"
+              >
+                Follow @bigh_footwears
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="bg-background px-6 py-20 sm:px-10">
