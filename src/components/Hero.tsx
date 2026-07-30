@@ -47,6 +47,10 @@ export default function Hero() {
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent"
       />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ink/45 to-transparent"
+      />
 
       <button
         type="button"

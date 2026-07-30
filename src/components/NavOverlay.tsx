@@ -49,7 +49,7 @@ const panelTitle: Record<Exclude<Panel, "root">, string> = {
   login: "Account",
 };
 
-export default function NavOverlay() {
+export default function NavOverlay({ transparent }: { transparent?: boolean }) {
   const [open, setOpen] = useState(false);
   const [panel, setPanel] = useState<Panel>("root");
   const [searchOpen, setSearchOpen] = useState(false);
@@ -95,7 +95,11 @@ export default function NavOverlay() {
         onClick={() => setOpen(true)}
         aria-expanded={open}
         aria-label="Open menu"
-        className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:text-muted"
+        className={`flex items-center gap-2 text-xs uppercase tracking-[0.2em] transition-colors duration-300 ${
+          transparent
+            ? "text-background hover:text-background/70"
+            : "text-foreground hover:text-muted"
+        }`}
       >
         <span className="flex h-3 w-4 flex-col justify-between">
           <span className="h-px w-full bg-current" />
