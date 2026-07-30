@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { PauseIcon, PlayIcon } from "@/components/icons";
 
@@ -66,7 +67,7 @@ export default function Hero() {
         )}
       </button>
 
-      <div className="relative z-10 flex w-full flex-col gap-6 px-6 pb-16 sm:px-10 sm:pb-20">
+      <div className="relative z-10 flex w-full flex-col items-center gap-6 px-6 pb-16 text-center sm:px-10 sm:pb-20">
         <div className="flex items-center gap-3">
           <Image
             src="/bigh-logo.jpeg"
@@ -81,28 +82,32 @@ export default function Hero() {
           </span>
         </div>
 
-        <h1 className="max-w-3xl text-4xl leading-[1.05] tracking-tight text-background sm:text-6xl lg:text-7xl">
-          {siteConfig.fullName}
+        <h1 className="max-w-3xl text-3xl font-light uppercase leading-[1.15] tracking-[0.12em] text-background sm:text-5xl sm:tracking-[0.15em] lg:text-6xl">
+          Big H Style Hub
           <span className="text-background/60"> &amp; Footwears</span>
         </h1>
 
-        <p className="max-w-xl text-sm text-background/80 sm:text-base">
-          {siteConfig.description}
-        </p>
-
-        <div className="mt-2 flex flex-wrap gap-4">
-          <a
-            href="#products"
-            className="border border-background px-7 py-3 text-xs uppercase tracking-[0.2em] text-background transition-colors hover:bg-background hover:text-ink"
+        <div className="mt-2 flex flex-wrap items-center justify-center gap-6">
+          <Link
+            href="/shop/men"
+            className="text-xs font-light uppercase tracking-[0.25em] text-background transition-colors hover:text-background/70"
           >
-            Explore Collections
-          </a>
-          <a
-            href="#contact"
-            className="px-7 py-3 text-xs uppercase tracking-[0.2em] text-background/80 underline underline-offset-4 transition-colors hover:text-background"
+            Men
+          </Link>
+          <span aria-hidden className="h-3 w-px bg-background/40" />
+          <Link
+            href="/shop/women"
+            className="text-xs font-light uppercase tracking-[0.25em] text-background transition-colors hover:text-background/70"
           >
-            Contact Us
-          </a>
+            Women
+          </Link>
+          <span aria-hidden className="h-3 w-px bg-background/40" />
+          <Link
+            href="/shop/kids"
+            className="text-xs font-light uppercase tracking-[0.25em] text-background transition-colors hover:text-background/70"
+          >
+            Kids
+          </Link>
         </div>
       </div>
     </section>
