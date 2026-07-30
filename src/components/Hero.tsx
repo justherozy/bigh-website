@@ -94,7 +94,7 @@ export default function Hero() {
 
         <h1
           style={{ fontFamily: "var(--font-sans), Arial, Helvetica, sans-serif" }}
-          className="max-w-3xl text-3xl font-light uppercase leading-[1.15] tracking-[0.12em] text-background sm:text-5xl sm:tracking-[0.15em] lg:text-6xl"
+          className="max-w-3xl text-2xl font-light uppercase leading-[1.15] tracking-[0.12em] text-background sm:text-3xl sm:tracking-[0.15em] lg:text-4xl"
         >
           Big H Style Hub
           <span className="text-background/60"> &amp; Footwears</span>
