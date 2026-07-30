@@ -255,62 +255,6 @@ export const editorialSlides: EditorialSlide[] = [
   },
 ];
 
-export type HubNewsItem = {
-  category: string;
-  title: string;
-  image: string;
-  focal?: string;
-  href: string;
-};
-
-// "Big H Hub News" carousel shown near the footer CTA — a mix of shows,
-// events, and drops. Each card links to the most relevant real page on
-// the site (a collection, a shop category, or the contact section).
-export const hubNews: HubNewsItem[] = [
-  {
-    category: "Fashion Show",
-    title: "Lagos Fashion Week Edit",
-    image: "https://images.unsplash.com/photo-1648328168368-3a25f2152802",
-    focal: "center 20%",
-    href: "/collections/signature-collection",
-  },
-  {
-    category: "Event",
-    title: "The Traditional Wedding Edit",
-    image: "https://images.unsplash.com/photo-1682903702424-2bf1c8e4e12b",
-    focal: "center 15%",
-    href: "/collections/evening-elegance",
-  },
-  {
-    category: "New Arrivals",
-    title: "Everyday Refined, Reimagined",
-    image: "https://images.unsplash.com/photo-1661332360810-28aa035f14db",
-    focal: "center 12%",
-    href: "/collections/everyday-refined",
-  },
-  {
-    category: "Studio",
-    title: "Behind The Craft",
-    image: "https://images.unsplash.com/photo-1763368161231-3d1e91e48d08",
-    focal: "center 15%",
-    href: "/shop/men",
-  },
-  {
-    category: "Collection Drop",
-    title: "The Accessories Edit Lands",
-    image: "https://images.unsplash.com/photo-1757683435646-4952c9daeba5",
-    focal: "center 12%",
-    href: "/collections/accessories-edit",
-  },
-  {
-    category: "Pop-Up",
-    title: "BigH Comes To Lagos",
-    image: "https://images.unsplash.com/photo-1763823132521-72f373850de2",
-    focal: "center 12%",
-    href: "/#contact",
-  },
-];
-
 // Rotating brand-philosophy statements shown in the quiet section between
 // the hero and The Edit. Keep these short — one or two sentences, read aloud
 // in under five seconds.
