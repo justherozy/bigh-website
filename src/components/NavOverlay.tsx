@@ -22,7 +22,14 @@ import {
   WhatsAppIcon,
 } from "@/components/icons";
 
-type Panel = "root" | "shop" | "collections" | "follow" | "wishlist" | "bag" | "login";
+export type Panel =
+  | "root"
+  | "shop"
+  | "collections"
+  | "follow"
+  | "wishlist"
+  | "bag"
+  | "login";
 
 const searchIndex = [
   { label: "Home", href: "/", group: "Page" },
@@ -49,17 +56,28 @@ const panelTitle: Record<Exclude<Panel, "root">, string> = {
   login: "Account",
 };
 
-export default function NavOverlay({ transparent }: { transparent?: boolean }) {
-  const [open, setOpen] = useState(false);
-  const [panel, setPanel] = useState<Panel>("root");
-  const [searchOpen, setSearchOpen] = useState(false);
+export default function NavOverlay({
+  open,
+  onOpenChange,
+  panel,
+  onPanelChange,
+  searchOpen,
+  onSearchOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  panel: Panel;
+  onPanelChange: (panel: Panel) => void;
+  searchOpen: boolean;
+  onSearchOpenChange: (open: boolean) => void;
+}) {
   const [query, setQuery] = useState("");
   const { wishlist, bag } = useCollectionsStore();
 
   const close = () => {
-    setOpen(false);
-    setPanel("root");
-    setSearchOpen(false);
+    onOpenChange(false);
+    onPanelChange("root");
+    onSearchOpenChange(false);
     setQuery("");
   };
 
@@ -89,29 +107,9 @@ export default function NavOverlay({ transparent }: { transparent?: boolean }) {
     `Hi BigH, I'm interested in: ${items.map((i) => i.name).join(", ")}.`;
 
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        aria-expanded={open}
-        aria-label="Open menu"
-        className={`flex items-center gap-2 text-xs uppercase tracking-[0.2em] transition-colors duration-300 ${
-          transparent
-            ? "text-background hover:text-background/70"
-            : "text-foreground hover:text-muted"
-        }`}
-      >
-        <span className="flex h-3 w-4 flex-col justify-between">
-          <span className="h-px w-full bg-current" />
-          <span className="h-px w-full bg-current" />
-          <span className="h-px w-full bg-current" />
-        </span>
-        Menu
-      </button>
-
-      <AnimatePresence>
-        {open && (
-          <>
+    <AnimatePresence>
+      {open && (
+        <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -144,7 +142,7 @@ export default function NavOverlay({ transparent }: { transparent?: boolean }) {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setSearchOpen((v) => !v)}
+                  onClick={() => onSearchOpenChange(!searchOpen)}
                   className="flex items-center gap-2 text-sm text-foreground"
                 >
                   <SearchIcon className="h-4 w-4" />
@@ -200,10 +198,10 @@ export default function NavOverlay({ transparent }: { transparent?: boolean }) {
                         className="flex flex-1 flex-col"
                       >
                         <nav className="flex flex-col py-2">
-                          <RootRow label="Shop" onClick={() => setPanel("shop")} />
+                          <RootRow label="Shop" onClick={() => onPanelChange("shop")} />
                           <RootRow
                             label="Collections"
-                            onClick={() => setPanel("collections")}
+                            onClick={() => onPanelChange("collections")}
                           />
                           <Link
                             href="/#edit"
@@ -214,7 +212,7 @@ export default function NavOverlay({ transparent }: { transparent?: boolean }) {
                           </Link>
                           <RootRow
                             label="Follow Us"
-                            onClick={() => setPanel("follow")}
+                            onClick={() => onPanelChange("follow")}
                           />
                         </nav>
 
@@ -222,17 +220,17 @@ export default function NavOverlay({ transparent }: { transparent?: boolean }) {
                           <UtilityRow
                             icon={<PersonIcon className="h-5 w-5" />}
                             label="Log In or Register"
-                            onClick={() => setPanel("login")}
+                            onClick={() => onPanelChange("login")}
                           />
                           <UtilityRow
                             icon={<BagIcon className="h-5 w-5" />}
                             label={`Shopping Bag${bag.length ? ` (${bag.length})` : ""}`}
-                            onClick={() => setPanel("bag")}
+                            onClick={() => onPanelChange("bag")}
                           />
                           <UtilityRow
                             icon={<HeartIcon className="h-5 w-5" />}
                             label={`Wishlist${wishlist.length ? ` (${wishlist.length})` : ""}`}
-                            onClick={() => setPanel("wishlist")}
+                            onClick={() => onPanelChange("wishlist")}
                           />
                           <UtilityLink
                             icon={<WhatsAppIcon className="h-5 w-5" />}
@@ -259,7 +257,7 @@ export default function NavOverlay({ transparent }: { transparent?: boolean }) {
                       >
                         <button
                           type="button"
-                          onClick={() => setPanel("root")}
+                          onClick={() => onPanelChange("root")}
                           className="flex items-center gap-2 border-b border-line py-5 text-sm uppercase tracking-[0.2em] text-muted"
                         >
                           <ChevronLeftIcon className="h-4 w-4" />
@@ -408,7 +406,6 @@ export default function NavOverlay({ transparent }: { transparent?: boolean }) {
           </>
         )}
       </AnimatePresence>
-    </>
   );
 }
 
