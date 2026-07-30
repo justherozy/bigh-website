@@ -1,18 +1,34 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { siteConfig } from "@/lib/site-config";
+import { PauseIcon, PlayIcon } from "@/components/icons";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (!mq.matches) {
-      videoRef.current?.play().catch(() => {});
+      videoRef.current
+        ?.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
     }
   }, []);
+
+  const toggleVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play().then(() => setIsPlaying(true)).catch(() => {});
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
 
   return (
     <section id="home" className="relative flex h-screen min-h-[640px] w-full items-end">
@@ -31,6 +47,20 @@ export default function Hero() {
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent"
       />
+
+      <button
+        type="button"
+        onClick={toggleVideo}
+        aria-label={isPlaying ? "Pause video" : "Play video"}
+        aria-pressed={isPlaying}
+        className="absolute bottom-6 right-6 z-20 flex h-11 w-11 items-center justify-center bg-background/10 text-background backdrop-blur-sm transition-colors hover:bg-background/20 sm:bottom-8 sm:right-8"
+      >
+        {isPlaying ? (
+          <PauseIcon className="h-4 w-4" />
+        ) : (
+          <PlayIcon className="h-4 w-4" />
+        )}
+      </button>
 
       <div className="relative z-10 flex w-full flex-col gap-6 px-6 pb-16 sm:px-10 sm:pb-20">
         <div className="flex items-center gap-3">

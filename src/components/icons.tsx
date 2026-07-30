@@ -139,3 +139,20 @@ export function PersonIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function PlayIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M8 5.5v13l11-6.5-11-6.5z" />
+    </svg>
+  );
+}
+
+export function PauseIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <rect x="6.5" y="5.5" width="4" height="13" rx="0.5" />
+      <rect x="13.5" y="5.5" width="4" height="13" rx="0.5" />
+    </svg>
+  );
+}
