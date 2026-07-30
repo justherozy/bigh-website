@@ -44,7 +44,7 @@ const searchIndex = [
     group: "Collection",
   })),
   { label: "The Edit", href: "/#edit", group: "Page" },
-  { label: "Contact", href: "#contact", group: "Page" },
+  { label: "Contact Us", href: "#contact", group: "Page" },
 ];
 
 const panelTitle: Record<Exclude<Panel, "root">, string> = {

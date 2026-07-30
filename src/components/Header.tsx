@@ -53,9 +53,14 @@ export default function Header() {
             type="button"
             aria-label="Search"
             onClick={() => openPanel("root", true)}
-            className={iconClass}
+            className={`flex items-center gap-2 px-2 py-2 text-xs font-light uppercase tracking-[0.2em] transition-colors duration-300 ${
+              transparent
+                ? "text-background hover:text-background/70"
+                : "text-foreground hover:text-muted"
+            }`}
           >
             <SearchIcon className="h-5 w-5" />
+            <span>Search</span>
           </button>
           <button
             type="button"
@@ -83,11 +88,11 @@ export default function Header() {
             priority
           />
           <span
-            className={`font-display text-3xl transition-colors duration-300 sm:text-4xl ${
+            className={`whitespace-nowrap font-sans text-base font-light uppercase tracking-[0.2em] transition-colors duration-300 sm:text-xl sm:tracking-[0.25em] ${
               transparent ? "text-background" : "text-foreground"
             }`}
           >
-            {siteConfig.name}
+            Big H Style Hub
           </span>
         </Link>
 
@@ -112,7 +117,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => openPanel("root")}
-            className={`flex items-center gap-2 px-2 py-2 text-xs uppercase tracking-[0.2em] transition-colors duration-300 ${
+            className={`flex items-center gap-2 px-2 py-2 text-xs font-light uppercase tracking-[0.2em] transition-colors duration-300 ${
               transparent
                 ? "text-background hover:text-background/70"
                 : "text-foreground hover:text-muted"
