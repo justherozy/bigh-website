@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,15 +12,26 @@ import { BagIcon, HeartIcon, PersonIcon, SearchIcon } from "@/components/icons";
 export default function Header() {
   const pathname = usePathname();
   const [hovered, setHovered] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [panel, setPanel] = useState<Panel>("root");
   const [searchOpen, setSearchOpen] = useState(false);
   const { wishlist, bag } = useCollectionsStore();
 
   // Only the homepage has a full-bleed video hero behind the header — let
-  // the video show through until the visitor's cursor is on the bar itself.
+  // the video show through until the visitor's cursor is on the bar, or
+  // once they've scrolled past the hero, at which point it stays solid.
   const isHome = pathname === "/";
-  const transparent = isHome && !hovered;
+
+  useEffect(() => {
+    if (!isHome) return;
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome]);
+
+  const transparent = isHome && !hovered && !scrolled;
 
   const openPanel = (p: Panel, search = false) => {
     setPanel(p);
