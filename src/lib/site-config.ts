@@ -12,6 +12,31 @@ export const siteConfig = {
   // Background video for the hero section.
   heroVideo: "/videos/hero.mp4",
 
+  // Pool of hero videos — one is picked at random on every page load/reload.
+  // All feature real Nigerians in genuine Nigerian traditional attire.
+  heroVideos: [
+    {
+      src: "/videos/hero.mp4",
+      poster:
+        "https://images.pexels.com/videos/27939220/african-culture-african-tradition-agbada-ancestral-worship-27939220.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    },
+    {
+      src: "/videos/hero-2.mp4",
+      poster:
+        "https://images.pexels.com/videos/27939221/african-culture-african-tradition-agbada-ancestral-worship-27939221.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    },
+    {
+      src: "/videos/hero-3.mp4",
+      poster:
+        "https://images.pexels.com/videos/38299944/pexels-photo-38299944.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    },
+    {
+      src: "/videos/hero-4.mp4",
+      poster:
+        "https://images.pexels.com/videos/38299943/pexels-photo-38299943.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    },
+  ],
+
   // WhatsApp numbers (used for "Contact Us" buttons). Format: country code + number, no spaces or symbols.
   whatsapp: [
     { label: "Nigeria", number: "2347068922698" },

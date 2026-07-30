@@ -9,6 +9,15 @@ import { PauseIcon, PlayIcon } from "@/components/icons";
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [videoIndex, setVideoIndex] = useState(0);
+
+  // Pick a random hero video after hydration (client-only) so each reload
+  // can show a different one without the server/client markup mismatching.
+  useEffect(() => {
+    setVideoIndex(Math.floor(Math.random() * siteConfig.heroVideos.length));
+  }, []);
+
+  const activeVideo = siteConfig.heroVideos[videoIndex];
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -18,7 +27,7 @@ export default function Hero() {
         .then(() => setIsPlaying(true))
         .catch(() => {});
     }
-  }, []);
+  }, [videoIndex]);
 
   const toggleVideo = () => {
     const video = videoRef.current;
@@ -34,14 +43,15 @@ export default function Hero() {
   return (
     <section id="home" className="relative flex h-screen min-h-[640px] w-full items-end">
       <video
+        key={videoIndex}
         ref={videoRef}
         muted
         loop
         playsInline
-        poster={siteConfig.heroImage}
+        poster={activeVideo.poster}
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src={siteConfig.heroVideo} type="video/mp4" />
+        <source src={activeVideo.src} type="video/mp4" />
       </video>
 
       <div
