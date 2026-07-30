@@ -33,7 +33,7 @@ export const siteConfig = {
     {
       src: "/videos/hero-4.mp4",
       poster:
-        "https://images.pexels.com/videos/38299943/pexels-photo-38299943.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "https://images.pexels.com/videos/36743139/pexels-photo-36743139.jpeg?auto=compress&cs=tinysrgb&w=1920",
     },
   ],
 
