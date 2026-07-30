@@ -30,11 +30,6 @@ export const siteConfig = {
       poster:
         "https://images.pexels.com/videos/27939222/african-culture-african-tradition-agbada-ancestral-worship-27939222.jpeg?auto=compress&cs=tinysrgb&w=1920",
     },
-    {
-      src: "/videos/hero-4.mp4",
-      poster:
-        "https://images.pexels.com/videos/31708205/pexels-photo-31708205.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    },
   ],
 
   // WhatsApp numbers (used for "Contact Us" buttons). Format: country code + number, no spaces or symbols.
