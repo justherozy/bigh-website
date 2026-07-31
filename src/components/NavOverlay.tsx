@@ -44,6 +44,7 @@ const searchIndex = [
     group: "Collection",
   })),
   { label: "The Edit", href: "/#edit", group: "Page" },
+  { label: "Checkout", href: "/checkout", group: "Page" },
   { label: "Contact Us", href: "#contact", group: "Page" },
 ];
 
@@ -359,18 +360,27 @@ export default function NavOverlay({
                               onNavigate={close}
                             />
                             {bagItems.length > 0 && (
-                              <a
-                                href={`https://wa.me/${siteConfig.whatsapp[0].number}?text=${encodeURIComponent(
-                                  bagMessage(bagItems)
-                                )}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={close}
-                                className="mt-6 flex items-center justify-center gap-2 bg-foreground px-6 py-3 text-xs uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-90"
-                              >
-                                <WhatsAppIcon className="h-4 w-4" />
-                                Enquire via WhatsApp
-                              </a>
+                              <div className="mt-6 flex flex-col gap-3">
+                                <Link
+                                  href="/checkout"
+                                  onClick={close}
+                                  className="flex items-center justify-center gap-2 bg-foreground px-6 py-3 text-xs uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-90"
+                                >
+                                  Proceed To Checkout
+                                </Link>
+                                <a
+                                  href={`https://wa.me/${siteConfig.whatsapp[0].number}?text=${encodeURIComponent(
+                                    bagMessage(bagItems)
+                                  )}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={close}
+                                  className="flex items-center justify-center gap-2 border border-line px-6 py-3 text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-surface-muted"
+                                >
+                                  <WhatsAppIcon className="h-4 w-4" />
+                                  Quick Enquire On WhatsApp
+                                </a>
+                              </div>
                             )}
                           </>
                         )}
