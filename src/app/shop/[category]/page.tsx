@@ -46,6 +46,7 @@ export default async function ShopCategoryPage({
         description={category.description}
         image={category.image}
         accent={category.accent}
+        focal={category.focal}
       />
 
       <section

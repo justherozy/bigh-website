@@ -45,6 +45,7 @@ export default async function CollectionPage({
         description={product.description}
         image={product.image}
         accent={product.accent}
+        focal={product.focal}
       />
 
       <section

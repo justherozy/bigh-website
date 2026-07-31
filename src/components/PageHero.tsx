@@ -6,12 +6,14 @@ export default function PageHero({
   description,
   image,
   accent,
+  focal,
 }: {
   kicker: string;
   title: string;
   description: string;
   image: string;
   accent: string;
+  focal?: string;
 }) {
   return (
     <section className="relative flex min-h-[75vh] items-end overflow-hidden pt-24">
@@ -21,6 +23,7 @@ export default function PageHero({
         fill
         priority
         className="object-cover"
+        style={{ objectPosition: focal ?? "center" }}
         sizes="100vw"
       />
       <div

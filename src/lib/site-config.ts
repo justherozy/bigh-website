@@ -66,6 +66,8 @@ export type Product = {
   name: string;
   category: string;
   image: string;
+  // CSS object-position for the hero image — see Category.focal above.
+  focal?: string;
   description: string;
   longDescription: string;
   accent: string;
@@ -93,6 +95,7 @@ export const products: Product[] = [
     name: "Evening Elegance",
     category: "Occasion wear",
     image: "https://images.unsplash.com/photo-1642808637173-070a839ddae2",
+    focal: "center 8%",
     description:
       "Aso-oke and agbada, tailored for the room you're about to walk into — traditional cloth, modern proportion.",
     longDescription:
@@ -131,6 +134,10 @@ export type Category = {
   label: string;
   kicker: string;
   image: string;
+  // CSS object-position for the hero image. Portrait-oriented photos need
+  // this tuned so wide desktop viewports (which crop hard vertically) keep
+  // the subject's face in frame. Defaults to "center" if omitted.
+  focal?: string;
   description: string;
   longDescription: string;
   accent: string;
@@ -146,6 +153,7 @@ export const categories: Category[] = [
     label: "Women",
     kicker: "Shop Women",
     image: "https://images.unsplash.com/photo-1769451741943-7c0897deac21",
+    focal: "center 10%",
     description: "Tailored Western lines, worn alongside gele and lace.",
     longDescription:
       "From sculpted evening wear to aso-oke reworked for modern proportion, the Women's edit moves between two wardrobes at once. New arrivals are added regularly — message us for the current in-stock edit while the full lookbook is being finalised.",
@@ -158,6 +166,7 @@ export const categories: Category[] = [
     label: "Men",
     kicker: "Shop Men",
     image: "https://images.unsplash.com/photo-1782566208081-6b5135fddf23",
+    focal: "center 12%",
     description: "Agbada and tailoring, cut with the same discipline.",
     longDescription:
       "Outerwear and tailoring built around a simple idea, applied to two traditions at once: the quiet confidence of Western menswear, and the presence of a well-cut agbada. The Men's edit is being photographed now — reach out on WhatsApp for current availability.",
@@ -324,6 +333,7 @@ export const journalEntries: JournalEntry[] = [
     category: "Fashion Show",
     title: "On The Runway",
     image: "https://images.unsplash.com/photo-1747171053296-84c4e8015b24",
+    focal: "center 5%",
     excerpt: "A cut only really reveals itself once it's moving.",
     story:
       "Photographs can only tell you so much about how a garment falls — the runway is where it proves itself. Every hem, every sleeve, every drape gets tested in motion, in front of a room that notices everything.",
@@ -342,6 +352,7 @@ export const journalEntries: JournalEntry[] = [
     category: "Street Style",
     title: "Lagos, Unscripted",
     image: "https://images.unsplash.com/photo-1531123414780-f74242c2b052",
+    focal: "center 15%",
     excerpt: "The best style moments are rarely the planned ones.",
     story:
       "Some of the sharpest looks happen off-schedule — on a street corner, between appointments, when nobody's posing for anyone. That's the energy BigH is built for: pieces that hold up whether the day goes to plan or not.",
@@ -350,7 +361,8 @@ export const journalEntries: JournalEntry[] = [
     slug: "pattern-play",
     category: "Lookbook",
     title: "Pattern Play",
-    image: "https://images.unsplash.com/photo-1530884698386-d42ad3199b1f",
+    image: "https://images.unsplash.com/photo-1738363436272-f191888a398b",
+    focal: "center 55%",
     excerpt: "Menswear that isn't afraid of colour.",
     story:
       "A tailored jacket doesn't have to whisper. This edit is for pieces that hold a room's attention — bold pattern, sharp cut, worn with the same confidence as a plain black suit.",
@@ -378,6 +390,7 @@ export const journalEntries: JournalEntry[] = [
     category: "Behind The Scenes",
     title: "Before The Walk",
     image: "https://images.unsplash.com/photo-1742237424056-ea5cbb674d66",
+    focal: "center 30%",
     excerpt: "The minutes before a show are where the real work shows.",
     story:
       "Nobody sees the fittings, the pinning, the last-minute adjustments before a model steps out — but that's where a collection is actually made. BigH pieces are built to survive that pressure, not just look good standing still.",
@@ -387,6 +400,7 @@ export const journalEntries: JournalEntry[] = [
     category: "Editorial",
     title: "Frame By Frame",
     image: "https://images.unsplash.com/photo-1625646741211-711bdd65c570",
+    focal: "center 15%",
     excerpt: "Colour, cut, and confidence — one frame at a time.",
     story:
       "Every BigH shoot is a chance to show a piece somewhere new: different light, different mood, different story. This is that idea distilled into a single frame — a look that holds up under any lens.",
