@@ -45,7 +45,7 @@ function NewsletterForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <label
         htmlFor="newsletter-email"
-        className="text-xs font-bold uppercase tracking-[0.2em] text-foreground"
+        className="text-[11px] font-bold uppercase leading-snug tracking-[0.15em] text-foreground"
       >
         Subscribe To Our Newsletter
       </label>
@@ -57,7 +57,7 @@ function NewsletterForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           placeholder="Insert your e-mail address *"
-          className="w-full bg-transparent text-sm text-foreground placeholder:text-muted focus:outline-none"
+          className="w-full min-w-0 bg-transparent text-xs text-foreground placeholder:text-muted focus:outline-none"
         />
         <button
           type="submit"
@@ -67,7 +67,7 @@ function NewsletterForm() {
           <ArrowRightIcon className="h-5 w-5" />
         </button>
       </div>
-      <p className="text-xs leading-relaxed text-muted">
+      <p className="text-[11px] leading-relaxed text-muted">
         By subscribing, you agree to receive newsletters and marketing
         messages from BigH by email or WhatsApp.
       </p>
@@ -79,16 +79,16 @@ export default function Footer() {
   return (
     <footer className="border-t border-line bg-background px-6 py-16 sm:px-10">
       <div className="mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-          <div>
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
+          <div className="lg:col-span-1">
             <NewsletterForm />
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
+            <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-foreground">
               Contact Us
             </p>
-            <ul className="flex flex-col gap-2.5 text-sm text-muted">
+            <ul className="flex flex-col gap-2.5 text-xs text-muted">
               {siteConfig.whatsapp.map((entry) => (
                 <li key={entry.label}>
                   <a
@@ -115,10 +115,10 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
+            <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-foreground">
               Shop
             </p>
-            <ul className="flex flex-col gap-2.5 text-sm text-muted">
+            <ul className="flex flex-col gap-2.5 text-xs text-muted">
               {categories.map((category) => (
                 <li key={category.slug}>
                   <Link
@@ -133,10 +133,10 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
+            <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-foreground">
               Collections
             </p>
-            <ul className="flex flex-col gap-2.5 text-sm text-muted">
+            <ul className="flex flex-col gap-2.5 text-xs text-muted">
               {products.map((product) => (
                 <li key={product.slug}>
                   <Link
@@ -151,10 +151,10 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
+            <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-foreground">
               Services
             </p>
-            <ul className="flex flex-col gap-2.5 text-sm text-muted">
+            <ul className="flex flex-col gap-2.5 text-xs text-muted">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -169,10 +169,10 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
+            <p className="text-[11px] font-bold uppercase leading-snug tracking-[0.15em] text-foreground">
               Legal Terms And Conditions
             </p>
-            <ul className="flex flex-col gap-2.5 text-sm text-muted">
+            <ul className="flex flex-col gap-2.5 text-xs text-muted">
               {legalLinks.map((link) => (
                 <li key={link.href}>
                   <Link
