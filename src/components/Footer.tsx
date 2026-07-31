@@ -11,6 +11,20 @@ import {
   TikTokIcon,
 } from "@/components/icons";
 
+const serviceLinks = [
+  { label: "How To Order", href: "/how-to-order" },
+  { label: "Shipping & Delivery", href: "/shipping-delivery" },
+  { label: "Returns & Exchanges", href: "/returns" },
+  { label: "FAQ", href: "/faq" },
+];
+
+const legalLinks = [
+  { label: "Legal Notice", href: "/legal-notice" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms Of Sale", href: "/terms-of-sale" },
+  { label: "Sitemap", href: "/sitemap" },
+];
+
 function NewsletterForm() {
   const [email, setEmail] = useState("");
 
@@ -31,7 +45,7 @@ function NewsletterForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <label
         htmlFor="newsletter-email"
-        className="text-xs uppercase tracking-[0.2em] text-foreground"
+        className="text-xs font-bold uppercase tracking-[0.2em] text-foreground"
       >
         Subscribe To Our Newsletter
       </label>
@@ -65,13 +79,13 @@ export default function Footer() {
   return (
     <footer className="border-t border-line bg-background px-6 py-16 sm:px-10">
       <div className="mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <NewsletterForm />
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-xs uppercase tracking-[0.2em] text-foreground">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
               Contact Us
             </p>
             <ul className="flex flex-col gap-2.5 text-sm text-muted">
@@ -101,7 +115,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-xs uppercase tracking-[0.2em] text-foreground">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
               Shop
             </p>
             <ul className="flex flex-col gap-2.5 text-sm text-muted">
@@ -119,7 +133,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-xs uppercase tracking-[0.2em] text-foreground">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
               Collections
             </p>
             <ul className="flex flex-col gap-2.5 text-sm text-muted">
@@ -130,6 +144,42 @@ export default function Footer() {
                     className="transition-colors hover:text-foreground"
                   >
                     {product.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
+              Services
+            </p>
+            <ul className="flex flex-col gap-2.5 text-sm text-muted">
+              {serviceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="transition-colors hover:text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">
+              Legal Terms And Conditions
+            </p>
+            <ul className="flex flex-col gap-2.5 text-sm text-muted">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="transition-colors hover:text-foreground"
+                  >
+                    {link.label}
                   </Link>
                 </li>
               ))}
