@@ -84,7 +84,7 @@ export default function Footer() {
             <NewsletterForm />
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div id="contact" className="flex scroll-mt-24 flex-col gap-4">
             <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-foreground">
               Contact Us
             </p>

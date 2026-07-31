@@ -292,6 +292,116 @@ export const editorialSlides: EditorialSlide[] = [
   },
 ];
 
+export type JournalEntry = {
+  slug: string;
+  // Short label shown as the card caption — Prada-style: CAMPAIGN, FASHION SHOW, EVENTS, etc.
+  category: string;
+  title: string;
+  image: string;
+  focal?: string;
+  // One-line teaser used on the entry's own page, under the title.
+  excerpt: string;
+  // Longer narrative for the entry's dedicated /journal/[slug] page.
+  story: string;
+};
+
+// BigH Journal — the auto-sliding image strip shown where "Get In Touch" used
+// to sit (see layout.tsx). Deliberately a different image set from
+// editorialSlides above, sourced from free-license African photography.
+// Each entry gets its own page at /journal/[slug].
+export const journalEntries: JournalEntry[] = [
+  {
+    slug: "in-the-studio",
+    category: "Campaign",
+    title: "In The Studio",
+    image: "https://images.unsplash.com/photo-1531299983330-093763e1d963",
+    excerpt: "One light, one look, and everything the outfit needs to say.",
+    story:
+      "Every BigH campaign starts the same way: strip away the noise until only the cut, the fabric, and the person wearing it are left in frame. No trend chasing, no filler — just the piece, doing the talking.",
+  },
+  {
+    slug: "on-the-runway",
+    category: "Fashion Show",
+    title: "On The Runway",
+    image: "https://images.unsplash.com/photo-1747171053296-84c4e8015b24",
+    excerpt: "A cut only really reveals itself once it's moving.",
+    story:
+      "Photographs can only tell you so much about how a garment falls — the runway is where it proves itself. Every hem, every sleeve, every drape gets tested in motion, in front of a room that notices everything.",
+  },
+  {
+    slug: "owambe-energy",
+    category: "Events",
+    title: "Owambe Energy",
+    image: "https://images.unsplash.com/photo-1681545303529-b6beb2e19f02",
+    excerpt: "The room BigH gets dressed for.",
+    story:
+      "Weddings, owambe, the big entrance — these are the days people photograph for years. This is the energy every occasion piece is built to survive: heat, dancing, and a room full of people who remember exactly what you wore.",
+  },
+  {
+    slug: "lagos-unscripted",
+    category: "Street Style",
+    title: "Lagos, Unscripted",
+    image: "https://images.unsplash.com/photo-1531123414780-f74242c2b052",
+    excerpt: "The best style moments are rarely the planned ones.",
+    story:
+      "Some of the sharpest looks happen off-schedule — on a street corner, between appointments, when nobody's posing for anyone. That's the energy BigH is built for: pieces that hold up whether the day goes to plan or not.",
+  },
+  {
+    slug: "pattern-play",
+    category: "Lookbook",
+    title: "Pattern Play",
+    image: "https://images.unsplash.com/photo-1530884698386-d42ad3199b1f",
+    excerpt: "Menswear that isn't afraid of colour.",
+    story:
+      "A tailored jacket doesn't have to whisper. This edit is for pieces that hold a room's attention — bold pattern, sharp cut, worn with the same confidence as a plain black suit.",
+  },
+  {
+    slug: "the-headwrap",
+    category: "Portrait",
+    title: "The Headwrap",
+    image: "https://images.unsplash.com/photo-1781184921203-f12a852b6b85",
+    excerpt: "A finishing touch that's really the whole statement.",
+    story:
+      "Long before an outfit is complete, the details decide how it reads — colour, wrap, the angle of a fold. This portrait is a reminder that presentation is never an afterthought at BigH; it's where the look actually begins.",
+  },
+  {
+    slug: "the-finishing-touch",
+    category: "Accessories",
+    title: "The Finishing Touch",
+    image: "https://images.unsplash.com/photo-1757140448448-90ed1f18fcbb",
+    excerpt: "Small pieces, doing the most work.",
+    story:
+      "Beads, pendants, the last layer before an outfit leaves the house — the Accessories Edit exists because the smallest choices carry the most weight. Nothing here competes with the rest of the look; it completes it.",
+  },
+  {
+    slug: "before-the-walk",
+    category: "Behind The Scenes",
+    title: "Before The Walk",
+    image: "https://images.unsplash.com/photo-1742237424056-ea5cbb674d66",
+    excerpt: "The minutes before a show are where the real work shows.",
+    story:
+      "Nobody sees the fittings, the pinning, the last-minute adjustments before a model steps out — but that's where a collection is actually made. BigH pieces are built to survive that pressure, not just look good standing still.",
+  },
+  {
+    slug: "frame-by-frame",
+    category: "Editorial",
+    title: "Frame By Frame",
+    image: "https://images.unsplash.com/photo-1625646741211-711bdd65c570",
+    excerpt: "Colour, cut, and confidence — one frame at a time.",
+    story:
+      "Every BigH shoot is a chance to show a piece somewhere new: different light, different mood, different story. This is that idea distilled into a single frame — a look that holds up under any lens.",
+  },
+  {
+    slug: "where-fabric-begins",
+    category: "Craft",
+    title: "Where Fabric Begins",
+    image: "https://images.unsplash.com/photo-1552710307-537199cd41c0",
+    excerpt: "Before a piece is cut, it's chosen — one bolt at a time.",
+    story:
+      "Every BigH garment starts at the fabric table, not the sewing machine. Colour, weight, and hand-feel get chosen with the same care that goes into the final stitch — because the finish is only as good as what you start with.",
+  },
+];
+
 // Rotating brand-philosophy statements shown in the quiet section between
 // the hero and The Edit. Keep these short — one or two sentences, read aloud
 // in under five seconds.

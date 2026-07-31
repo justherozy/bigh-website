@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { editorialSlides } from "@/lib/site-config";
+import Link from "next/link";
+import { journalEntries } from "@/lib/site-config";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
 export default function JournalCarousel() {
@@ -42,27 +43,33 @@ export default function JournalCarousel() {
           className="no-scrollbar flex gap-6 overflow-x-auto scroll-smooth px-6 sm:px-10"
           style={{ scrollSnapType: "x mandatory" }}
         >
-          {editorialSlides.map((slide) => (
-            <div
-              key={slide.title}
+          {journalEntries.map((entry) => (
+            <Link
+              key={entry.slug}
+              href={`/journal/${entry.slug}`}
               data-card
-              className="flex w-[78vw] shrink-0 flex-col gap-3 sm:w-[52vw] lg:w-[38vw]"
+              className="group flex w-[78vw] shrink-0 flex-col gap-3 sm:w-[52vw] lg:w-[38vw]"
               style={{ scrollSnapAlign: "start" }}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src={slide.image}
-                  alt={slide.title}
+                  src={entry.image}
+                  alt={entry.title}
                   fill
-                  className="object-cover"
-                  style={{ objectPosition: slide.focal ?? "center" }}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectPosition: entry.focal ?? "center" }}
                   sizes="(min-width: 1024px) 38vw, (min-width: 640px) 52vw, 78vw"
                 />
+                <div className="absolute inset-0 flex items-center justify-center bg-ink/0 transition-colors duration-300 group-hover:bg-ink/40">
+                  <span className="text-xs uppercase tracking-[0.3em] text-background opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    Discover
+                  </span>
+                </div>
               </div>
               <p className="text-center text-xs uppercase tracking-[0.3em] text-background/60">
-                {slide.kicker}
+                {entry.category}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 
