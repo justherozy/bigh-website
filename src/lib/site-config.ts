@@ -301,6 +301,12 @@ export const editorialSlides: EditorialSlide[] = [
   },
 ];
 
+export type JournalGalleryImage = {
+  image: string;
+  alt: string;
+  focal?: string;
+};
+
 export type JournalEntry = {
   slug: string;
   // Short label shown as the card caption — Prada-style: CAMPAIGN, FASHION SHOW, EVENTS, etc.
@@ -310,8 +316,11 @@ export type JournalEntry = {
   focal?: string;
   // One-line teaser used on the entry's own page, under the title.
   excerpt: string;
-  // Longer narrative for the entry's dedicated /journal/[slug] page.
-  story: string;
+  // Longer narrative for the entry's dedicated /journal/[slug] page, one
+  // paragraph per array entry.
+  story: string[];
+  // Supporting images shown between paragraphs on the entry's own page.
+  gallery: JournalGalleryImage[];
 };
 
 // BigH Journal — the auto-sliding image strip shown where "Get In Touch" used
@@ -325,8 +334,21 @@ export const journalEntries: JournalEntry[] = [
     title: "In The Studio",
     image: "https://images.unsplash.com/photo-1531299983330-093763e1d963",
     excerpt: "One light, one look, and everything the outfit needs to say.",
-    story:
+    story: [
       "Every BigH campaign starts the same way: strip away the noise until only the cut, the fabric, and the person wearing it are left in frame. No trend chasing, no filler — just the piece, doing the talking.",
+      "A campaign shoot is where a garment is asked to prove itself without the help of a party, a runway, or a crowd. One light, one backdrop, one look — and if the tailoring doesn't hold up under that kind of scrutiny, it doesn't make the edit. That standard is deliberate: it's the same one every BigH piece is held to before it ever reaches a client.",
+      "What ends up in frame is rarely the first take. Sleeves get re-set, collars get steamed twice, a fold gets adjusted a centimetre to the left — small corrections most people will never notice, and that we'd notice immediately if we skipped them. That's the real subject of every BigH campaign: not a season, not a trend, just the standard the house won't compromise on.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1506863530036-1efeddceb993",
+        alt: "Grayscale studio portrait of a woman wearing a necklace",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1601412436009-d964bd02edbc",
+        alt: "Studio portrait of a woman in a black crew neck top",
+      },
+    ],
   },
   {
     slug: "on-the-runway",
@@ -335,8 +357,21 @@ export const journalEntries: JournalEntry[] = [
     image: "https://images.unsplash.com/photo-1747171053296-84c4e8015b24",
     focal: "center 5%",
     excerpt: "A cut only really reveals itself once it's moving.",
-    story:
+    story: [
       "Photographs can only tell you so much about how a garment falls — the runway is where it proves itself. Every hem, every sleeve, every drape gets tested in motion, in front of a room that notices everything.",
+      "A show is the only setting where a garment is tested exactly the way it will be worn — walking, turning, catching light from every angle, for a room that has seen enough clothes to know the difference between a good drape and a great one. Nothing about that pressure is forgiving, which is exactly why it matters.",
+      "For BigH, the runway isn't a marketing exercise — it's quality control performed in public. A hem that swings correctly, a sleeve that moves with the arm instead of against it, a silhouette that holds its shape after twenty steps rather than five: these are details a photograph can flatter but only motion can confirm.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1733322992706-1210ca79f4df",
+        alt: "A group of models walking down a runway",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1733322987267-f691d5be2bc6",
+        alt: "An audience watching a fashion show in Lagos, Nigeria",
+      },
+    ],
   },
   {
     slug: "owambe-energy",
@@ -344,8 +379,21 @@ export const journalEntries: JournalEntry[] = [
     title: "Owambe Energy",
     image: "https://images.unsplash.com/photo-1681545303529-b6beb2e19f02",
     excerpt: "The room BigH gets dressed for.",
-    story:
+    story: [
       "Weddings, owambe, the big entrance — these are the days people photograph for years. This is the energy every occasion piece is built to survive: heat, dancing, and a room full of people who remember exactly what you wore.",
+      "In Nigerian culture, an owambe isn't a side event — it's the event. Aso-ebi coordinated to the last bead, gele tied high enough to be seen across the room, and an unspoken rule that whatever you wear needs to survive hours of dancing, greeting, and being photographed from every angle by someone's cousin with a good camera.",
+      "We design occasion wear with that reality in mind, not a quiet studio one. A BigH piece for an owambe is cut to move, built to hold its shape after the third dance of the night, and finished with enough presence to be remembered the next morning — which, for this kind of event, is really the whole point.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1784202387839-05ad29074027",
+        alt: "A bride dancing with guests under the night sky",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1660675133902-acd1b057f75d",
+        alt: "A group of people in traditional dress at a celebration",
+      },
+    ],
   },
   {
     slug: "lagos-unscripted",
@@ -354,18 +402,44 @@ export const journalEntries: JournalEntry[] = [
     image: "https://images.unsplash.com/photo-1531123414780-f74242c2b052",
     focal: "center 15%",
     excerpt: "The best style moments are rarely the planned ones.",
-    story:
+    story: [
       "Some of the sharpest looks happen off-schedule — on a street corner, between appointments, when nobody's posing for anyone. That's the energy BigH is built for: pieces that hold up whether the day goes to plan or not.",
+      "Lagos doesn't really do quiet fashion. Between the traffic, the markets, and the sheer pace of the city, personal style here gets tested constantly — and the pieces that survive it aren't the delicate ones, they're the considered ones. Structure that holds up to a full day. Colour that reads from across the street. Fabric that doesn't wilt by 3pm.",
+      "This is the energy behind BigH's everyday pieces: designed less for a controlled studio moment and more for a Tuesday afternoon that might include three meetings, a market run, and an unplanned photo. If it can't survive Lagos, it doesn't leave the workshop.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1618434772075-47936b9f2840",
+        alt: "A man in a red jacket standing beside a yellow car in Lagos",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1618434772352-4e2ac5d9d0a4",
+        alt: "A man in a red shirt beside a Lagos danfo bus",
+      },
+    ],
   },
   {
-    slug: "pattern-play",
+    slug: "off-duty",
     category: "Lookbook",
-    title: "Pattern Play",
+    title: "Off Duty",
     image: "https://images.unsplash.com/photo-1738363436272-f191888a398b",
     focal: "center 55%",
-    excerpt: "Menswear that isn't afraid of colour.",
-    story:
-      "A tailored jacket doesn't have to whisper. This edit is for pieces that hold a room's attention — bold pattern, sharp cut, worn with the same confidence as a plain black suit.",
+    excerpt: "The version of confidence that doesn't need an occasion.",
+    story: [
+      "Not every strong look is built for a stage. Some of the most confident pieces in a wardrobe are the ones worn on a quiet day — a sharp cap, a clean collar, a posture that doesn't ask for attention but holds it anyway.",
+      "This edit is about that quieter register of style: pieces that don't need an event to justify themselves. A well-cut shirt worn plainly. Colour used with intention instead of noise. The kind of look that reads as considered even when nobody's explaining it.",
+      "It's a reminder that BigH isn't only occasion wear — the same discipline that goes into a wedding piece goes into the pieces worn on the days in between, when the only person you're dressing for is yourself.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1533108344127-a586d2b02479",
+        alt: "A man in a white dress shirt in Lagos, Nigeria",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1440451185281-11ff5853ce0a",
+        alt: "A man sitting on a chair near a wall",
+      },
+    ],
   },
   {
     slug: "the-headwrap",
@@ -373,8 +447,21 @@ export const journalEntries: JournalEntry[] = [
     title: "The Headwrap",
     image: "https://images.unsplash.com/photo-1781184921203-f12a852b6b85",
     excerpt: "A finishing touch that's really the whole statement.",
-    story:
+    story: [
       "Long before an outfit is complete, the details decide how it reads — colour, wrap, the angle of a fold. This portrait is a reminder that presentation is never an afterthought at BigH; it's where the look actually begins.",
+      "Across West Africa, the headwrap has never just been a finishing touch — it's a form of language. Colour, fold, height, and angle all carry meaning, and the way a woman ties her gele can say as much about the occasion as the dress underneath it. It's one of the oldest style statements in the region, and one of the most consistently modern.",
+      "We treat presentation the same way: never an afterthought, always a decision. Every BigH look is finished with the same intention this portrait captures — the understanding that the smallest choices are often the ones people remember longest.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1530785602389-07594beb8b73",
+        alt: "A smiling woman wearing a turban in Lagos, Nigeria",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1505421031134-e57263cae630",
+        alt: "A woman wearing a black and multicoloured turban",
+      },
+    ],
   },
   {
     slug: "the-finishing-touch",
@@ -382,8 +469,21 @@ export const journalEntries: JournalEntry[] = [
     title: "The Finishing Touch",
     image: "https://images.unsplash.com/photo-1757140448448-90ed1f18fcbb",
     excerpt: "Small pieces, doing the most work.",
-    story:
+    story: [
       "Beads, pendants, the last layer before an outfit leaves the house — the Accessories Edit exists because the smallest choices carry the most weight. Nothing here competes with the rest of the look; it completes it.",
+      "Jewellery in West African style has always done more than decorate — beads signal status, gold signals occasion, and the specific pieces a woman chooses to layer on say something about the story she's telling that day. None of it is incidental.",
+      "The Accessories Edit exists in that same spirit: pieces chosen to complete a look, not distract from it. A necklace that catches light without overwhelming the dress. Earrings that hold their own next to a bold gele. Small decisions, made with the same care as everything else BigH puts a name to.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1713845784494-33f5d1f96d25",
+        alt: "A woman with an afro wearing a necklace and earrings",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1641498974986-5a3011255841",
+        alt: "A collection of necklaces laid out on a table",
+      },
+    ],
   },
   {
     slug: "before-the-walk",
@@ -392,8 +492,21 @@ export const journalEntries: JournalEntry[] = [
     image: "https://images.unsplash.com/photo-1742237424056-ea5cbb674d66",
     focal: "center 30%",
     excerpt: "The minutes before a show are where the real work shows.",
-    story:
+    story: [
       "Nobody sees the fittings, the pinning, the last-minute adjustments before a model steps out — but that's where a collection is actually made. BigH pieces are built to survive that pressure, not just look good standing still.",
+      "Every show that looks effortless from the audience was, minutes earlier, a small controlled panic backstage — pins being adjusted, makeup being touched up, someone checking a hem for the third time while a stylist counts down the walk order. None of that discipline is visible once the lights come up, which is exactly the point.",
+      "We think about BigH pieces the same way: built to survive the parts nobody sees. A seam that holds through a quick change. A fabric that doesn't crease sitting backstage for an hour. The finished look on the runway is only half the story — the other half happens in a room like this one.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1636023730877-233b9237d4ec",
+        alt: "A woman getting her makeup done backstage",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1699802703426-a65263511fc2",
+        alt: "A woman checking her reflection in a mirror backstage",
+      },
+    ],
   },
   {
     slug: "frame-by-frame",
@@ -402,8 +515,21 @@ export const journalEntries: JournalEntry[] = [
     image: "https://images.unsplash.com/photo-1625646741211-711bdd65c570",
     focal: "center 15%",
     excerpt: "Colour, cut, and confidence — one frame at a time.",
-    story:
+    story: [
       "Every BigH shoot is a chance to show a piece somewhere new: different light, different mood, different story. This is that idea distilled into a single frame — a look that holds up under any lens.",
+      "An editorial shoot gives a piece room a campaign doesn't always allow — space to be reinterpreted, styled differently, shot in a mood that says something beyond 'buy this.' It's less about the product and more about the feeling a piece is capable of creating, in the right light, on the right day.",
+      "That's the appeal of editorial work for BigH: proof that a single piece can hold more than one story. The same garment that reads as quietly confident in one frame can read as bold, dramatic, or unexpected in another — without a single stitch being changed.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1667714789831-66e2297b35e7",
+        alt: "A woman with her hand resting on her face",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1633381521050-26bb467d9d5a",
+        alt: "A black and white portrait of a woman with long hair",
+      },
+    ],
   },
   {
     slug: "where-fabric-begins",
@@ -411,8 +537,21 @@ export const journalEntries: JournalEntry[] = [
     title: "Where Fabric Begins",
     image: "https://images.unsplash.com/photo-1552710307-537199cd41c0",
     excerpt: "Before a piece is cut, it's chosen — one bolt at a time.",
-    story:
+    story: [
       "Every BigH garment starts at the fabric table, not the sewing machine. Colour, weight, and hand-feel get chosen with the same care that goes into the final stitch — because the finish is only as good as what you start with.",
+      "Long before a pattern is cut, someone has already made dozens of decisions — the weight of the cloth, how it drapes, whether the colour holds up in daylight versus indoor light, whether it's worth the price per yard. Most of that judgment happens at the fabric table, not the design table, and it's easy to underestimate how much it decides about the finished piece.",
+      "That's why BigH treats sourcing as its own craft. A beautiful cut can't rescue a poor fabric choice, but the right fabric makes even a simple silhouette look considered. Every garment we make starts with that first, unglamorous decision — because the finish is only ever as good as what you start with.",
+    ],
+    gallery: [
+      {
+        image: "https://images.unsplash.com/photo-1641320197434-6ae0ca235048",
+        alt: "Close-up of a person using a sewing machine",
+      },
+      {
+        image: "https://images.unsplash.com/photo-1606501126768-b78d4569d3f9",
+        alt: "A person in a gray shirt sewing fabric",
+      },
+    ],
   },
 ];
 

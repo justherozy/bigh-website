@@ -64,13 +64,62 @@ export default async function JournalEntryPage({
         </div>
       </section>
 
-      <section className="bg-background px-6 py-20 sm:px-10">
+      <section className="bg-background px-6 pb-4 pt-20 sm:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-foreground/80">
-            {entry.story}
+            {entry.story[0]}
           </p>
         </div>
       </section>
+
+      {entry.gallery[0] && (
+        <section className="bg-background px-6 py-12 sm:px-10">
+          <div className="relative mx-auto aspect-[16/9] max-w-5xl overflow-hidden">
+            <Image
+              src={entry.gallery[0].image}
+              alt={entry.gallery[0].alt}
+              fill
+              className="object-cover"
+              style={{ objectPosition: entry.gallery[0].focal ?? "center" }}
+              sizes="(min-width: 1024px) 80vw, 100vw"
+            />
+          </div>
+        </section>
+      )}
+
+      {entry.story[1] && (
+        <section className="bg-background px-6 py-4 sm:px-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-lg leading-relaxed text-foreground/80">
+              {entry.story[1]}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {entry.gallery[1] && (
+        <section className="bg-background px-6 py-12 sm:px-10">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <Image
+                src={entry.gallery[1].image}
+                alt={entry.gallery[1].alt}
+                fill
+                className="object-cover"
+                style={{ objectPosition: entry.gallery[1].focal ?? "center" }}
+                sizes="(min-width: 640px) 40vw, 100vw"
+              />
+            </div>
+            <div className="flex items-center">
+              {entry.story[2] && (
+                <p className="text-lg leading-relaxed text-foreground/80">
+                  {entry.story[2]}
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-surface-muted px-6 py-20 sm:px-10">
         <div className="mx-auto max-w-6xl">

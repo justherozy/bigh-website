@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { journalEntries } from "@/lib/site-config";
+import { journalEntries, siteConfig } from "@/lib/site-config";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
 export default function JournalCarousel() {
@@ -34,7 +34,7 @@ export default function JournalCarousel() {
   return (
     <section className="bg-ink py-20 sm:py-24">
       <p className="mx-auto max-w-6xl px-6 text-center text-2xl font-bold text-background sm:px-10 sm:text-3xl">
-        BigH Journal
+        {siteConfig.fullName} Journal
       </p>
 
       <div className="relative mt-12">
