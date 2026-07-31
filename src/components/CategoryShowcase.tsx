@@ -11,9 +11,6 @@ export default function CategoryShowcase() {
           <p className="text-xs uppercase tracking-[0.3em] text-gold">
             Shop By Category
           </p>
-          <h2 className="mt-3 text-3xl tracking-tight text-foreground sm:text-4xl">
-            Find your edit
-          </h2>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4">
