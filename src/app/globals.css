@@ -87,3 +87,13 @@ h6 {
     padding-block: var(--space-section-y-lg);
   }
 }
+
+/* Horizontally-scrolling carousels (e.g. JournalCarousel) that shouldn't show a scrollbar. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
