@@ -18,11 +18,50 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://bigh-website-gamma.vercel.app";
+
 export const metadata: Metadata = {
-  title: `${siteConfig.fullName} | ${siteConfig.tagline}`,
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${siteConfig.fullName} | ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.fullName}`,
+  },
   description: siteConfig.description,
+  keywords: [
+    "BigH Style Hub",
+    "BigH Footwears",
+    "Nigerian fashion",
+    "African fashion",
+    "aso-oke",
+    "agbada",
+    "gele",
+    "Lagos fashion brand",
+  ],
   icons: {
     icon: "/bigh-logo.jpeg",
+    apple: "/bigh-logo.jpeg",
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: siteConfig.fullName,
+    title: `${siteConfig.fullName} | ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    images: [
+      {
+        url: "/bigh-logo.jpeg",
+        width: 512,
+        height: 512,
+        alt: `${siteConfig.fullName} logo`,
+      },
+    ],
+    locale: "en_NG",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.fullName} | ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    images: ["/bigh-logo.jpeg"],
   },
 };
 
